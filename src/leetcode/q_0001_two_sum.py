@@ -1,5 +1,5 @@
 """
-`0001 - Two Sum - Easy <https://leetcode.com/problems/two-sum/>`_
+`Leetcode: Easy <https://leetcode.com/problems/two-sum/>`_
 
 Given an array of integers ``nums`` and an integer ``target``, return indices of
 the two numbers such that they add up to ``target``.
@@ -18,7 +18,7 @@ from typing import List, Dict
 
 def two_sum(nums: List[int], target: int) -> List[int]:
     """
-    :Strategy:
+    :Explanation:
 
     use a dictionary ``indexOfComplements`` to store potential complements
     (difference of ``target`` and current ``num``) and their indices
@@ -27,13 +27,16 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     return its ``index`` along with the ``otherIndex`` from the dictionary,
     which will be two indices whose elements add up to the ``target``
 
-    * Runtime:  `n`
-    * Space:    `n`
+        =======  =====
+        Runtime  Space
+        =======  =====
+        n        n
+        =======  =====
 
-    :rtype: object
-    :param nums: List of integers.
-    :param target: The target sum.
+    :param List[int] nums: List of integers.
+    :param int target: The target sum.
     :return: Indices of the two numbers that add up to the target.
+    :rtype: List[int]
     """
     index_of_complements: Dict[int, int] = {}
 
