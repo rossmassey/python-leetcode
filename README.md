@@ -3,11 +3,9 @@
 ## Testing
 
 #### Run Unit Tests
-1. `python3 -m unittest discover -s tests`
+1. `python3 -m unittest`
 
 `unittest` comes with python
-
-tests all files in `tests` folder
 
 #### Doctest
 1. `cd docs && make doctest`

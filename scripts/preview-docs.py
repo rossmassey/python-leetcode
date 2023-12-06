@@ -12,7 +12,6 @@ DIRECTORY = "docs/build/html"
 
 def run_server():
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
-        print(f"Serving at port http://localhost:{PORT}")
         httpd.serve_forever()
 
 
@@ -53,6 +52,7 @@ server_thread.start()
 try:
     while True:
         test_docs()
+        print(f"\nHosting at http://localhost:{PORT}\n")
         command = input("Enter 'r' to rebuild docs, or 'q' to quit: ")
         if command.lower() == 'r':
             build_docs()
