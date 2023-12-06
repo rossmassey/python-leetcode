@@ -4,11 +4,15 @@ python3 -m unittest discover -s tests
 
 #### Generate Documentation
 1. `make html`
+2. `index.html` can be found under `docs/build/html/`
+
+#### Preview Documentation Script
+1. `python3 scripts/preview-docs.py`
+2. this will run a webserver at http://localhost:8000
 
 #### Documentation Guide
-
 1. follow format of two sum docstring
-2. create `doc/source/leetcode/xxxx_problem.rst`
+2. create `docs/source/leetcode/xxxx_problem.rst`
 ```rst
 .. _XXXX_problem:
 
@@ -33,4 +37,6 @@ Problem
 ```
 #### TODO
 
-Automate documentation generation
+- Automate documentation generation
+- Automate solution/test case generation
+- Add these instructions to documentations
