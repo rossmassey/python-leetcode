@@ -5,17 +5,22 @@
 #### Run Unit Tests
 1. `python3 -m unittest discover -s tests`
 
-leetcode's example input outputs, ran with `unittest`
+`unittest` comes with python
 
-tests all fies in `tests` folder
+tests all files in `tests` folder
 
 #### Doctest
 1. `cd docs && make doctest`
 
+see requirements below
+
 ## Sphinx Documentation
 
+#### Requirements
+1. `pip install -r requirements.txt`
+
 #### Generate Documentation
-1. `cd docs && make html`
+1. `cd docs && make clean html`
 2. `index.html` can be found under `docs/build/html/`
 
 #### Documentation Webserver
