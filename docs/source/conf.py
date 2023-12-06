@@ -19,7 +19,8 @@ author = 'Ross Massey'
 extensions = [
     'sphinx.ext.autodoc',   # html generation from docstrings
     'sphinx.ext.viewcode',  # source code in documentation
-    'sphinx.ext.doctest'    # evaluate >>> expressions
+    'sphinx.ext.doctest',    # evaluate >>> expressions
+    'sphinx.ext.napoleon'
 ]
 
 templates_path = ['_templates']

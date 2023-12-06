@@ -27,6 +27,15 @@ class Solution_0001:
 
     def two_sum(nums: List[int], target: int) -> List[int]:
         """
+        Args:
+            nums (List[int]): List of integers.
+            target (int): The target sum.
+
+        Returns:
+            List[int]: Indices of the two numbers that add up to the target.
+
+        ------
+
         :Runtime:   ``O(n)``
         :Space:     ``O(n)``
 
@@ -39,13 +48,6 @@ class Solution_0001:
             ``index`` and ``otherIndex`` from the dictionary
 
             giving two indices adding to ``target``
-
-        ------
-
-        :param List[int] nums: List of integers.
-        :param int target: The target sum.
-        :return: Indices of the two numbers that add up to the target.
-        :rtype: List[int]
 
         """
         index_of_complements: Dict[int, int] = {}
