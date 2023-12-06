@@ -17,8 +17,9 @@ author = 'Ross Massey'
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'sphinx.ext.autodoc',  # html generation from docstrings
-    'sphinx.ext.viewcode'  # source code in documentation
+    'sphinx.ext.autodoc',   # html generation from docstrings
+    'sphinx.ext.viewcode',  # source code in documentation
+    'sphinx.ext.doctest'    # evaluate >>> expressions
 ]
 
 templates_path = ['_templates']
@@ -27,6 +28,9 @@ exclude_patterns = []
 # modules location
 sys.path.insert(0, os.path.abspath('../../src'))
 
+doctest_global_setup = '''
+from leetcode import *
+'''
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
@@ -39,3 +43,4 @@ html_css_files = ['css/custom.css']
 
 def setup(app):
     app.add_css_file('css/custom.css')
+

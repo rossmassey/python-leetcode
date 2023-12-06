@@ -1,17 +1,32 @@
-#### Run Tests
+# Python Leetcode Solutions
 
-python3 -m unittest discover -s tests
+## Testing
+
+#### Run Unit Tests
+1. `python3 -m unittest discover -s tests`
+
+leetcode's example input outputs, ran with `unittest`
+
+tests all fies in `tests` folder
+
+#### Doctest
+1. `cd docs && make doctest`
+
+## Sphinx Documentation
 
 #### Generate Documentation
-1. `make html`
+1. `cd docs && make html`
 2. `index.html` can be found under `docs/build/html/`
 
-#### Preview Documentation Script
+#### Documentation Webserver
 1. `python3 scripts/preview-docs.py`
 2. this will run a webserver at http://localhost:8000
+3. this also runs doctest
+
+press `r` to re-build/re-test, and `q` to quit
 
 #### Documentation Guide
-1. follow format of two sum docstring
+1. follow format of `q_0001_two_sum` docstring
 2. create `docs/source/leetcode/xxxx_problem.rst`
 ```rst
 .. _XXXX_problem:
@@ -26,16 +41,16 @@ Problem
 ```
 :ref:`problem`
 ```
-4. add to toc at bottom of `neetcode.rst`
+4. add to toctree directive at bottom of `neetcode.rst`
 ```
 :In Order:
 
 .. toctree::
    :maxdepth: 1
-    ...
-   leetcode/XXXX_problem 
+
+   leetcode/XXXX_problem
 ```
-#### TODO
+## TODO
 
 - Automate documentation generation
 - Automate solution/test case generation

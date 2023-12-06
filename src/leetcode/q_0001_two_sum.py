@@ -1,6 +1,6 @@
 """
-`Leetcode: Easy <https://leetcode.com/problems/two-sum/>`_
-----------------------------------------------------------
+`Easy <https://leetcode.com/problems/two-sum/>`_
+------------------------------------------------
 
 .. sidebar:: Constraints
 
@@ -15,7 +15,11 @@ the two numbers such that they add up to ``target``.
 You may assume that each input would have **exactly one solution**, and you may
 not use the same element twice. You can return the answer in any order.
 
-------
+:Example:
+
+>>> two_sum([2, 7, 11, 15], 9)
+[1, 0]
+
 """
 from typing import List, Dict
 
@@ -25,14 +29,15 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     :Runtime:   ``O(n)``
     :Space:     ``O(n)``
 
-    :Summary:
+    :Strategy:
 
-        use a dictionary ``indexOfComplements`` to store potential complements
-        (difference of ``target`` and current ``num``) and their indices
+        use ``indexOfComplements`` to track complements (``target`` - ``num``)
+        and their indices
 
-        iterate over ``nums``, if current ``num`` is found in the dictionary,
-        return its ``index`` along with the ``otherIndex`` from the dictionary,
-        which will be two indices whose elements add up to the ``target``
+        while iterating ``nums``, if ``num`` is in the dictionary, return its
+        ``index`` and ``otherIndex`` from the dictionary
+
+        giving two indices adding to ``target``
 
     ------
 
@@ -40,6 +45,7 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     :param int target: The target sum.
     :return: Indices of the two numbers that add up to the target.
     :rtype: List[int]
+
     """
     index_of_complements: Dict[int, int] = {}
 
