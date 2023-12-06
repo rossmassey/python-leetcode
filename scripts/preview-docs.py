@@ -24,6 +24,7 @@ def build_docs():
     # Ensure the path is absolute
     docs_path = os.path.abspath(docs_path)
 
+    subprocess.run(["make", "clean"], cwd=docs_path)
     subprocess.run(["make", "html"], cwd=docs_path)
 
 # Initial build

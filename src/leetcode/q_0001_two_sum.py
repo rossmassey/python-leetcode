@@ -1,5 +1,13 @@
 """
 `Leetcode: Easy <https://leetcode.com/problems/two-sum/>`_
+----------------------------------------------------------
+
+.. sidebar:: Constraints
+
+    * ``2 <= len(nums) <= 10^4``
+    * ``-10^9 <= nums[i] <= 10^9``
+    * ``-10^9 <= target <= 10^9``
+    * Only one valid answer exists.
 
 Given an array of integers ``nums`` and an integer ``target``, return indices of
 the two numbers such that they add up to ``target``.
@@ -7,27 +15,26 @@ the two numbers such that they add up to ``target``.
 You may assume that each input would have **exactly one solution**, and you may
 not use the same element twice. You can return the answer in any order.
 
-:Constraints:
-
-* ``2 <= len(nums) <= 10^4``
-* ``-10^9 <= nums[i] <= 10^9``
-* ``-10^9 <= target <= 10^9``
-* Only one valid answer exists.
+------
 """
 from typing import List, Dict
 
 
 def two_sum(nums: List[int], target: int) -> List[int]:
     """
-    :Runtime: n
-    :Space: n
+    :Runtime:   ``O(n)``
+    :Space:     ``O(n)``
 
-    use a dictionary ``indexOfComplements`` to store potential complements
-    (difference of ``target`` and current ``num``) and their indices
+    :Summary:
 
-    iterate over ``nums``, if current ``num`` is found in the dictionary,
-    return its ``index`` along with the ``otherIndex`` from the dictionary,
-    which will be two indices whose elements add up to the ``target``
+        use a dictionary ``indexOfComplements`` to store potential complements
+        (difference of ``target`` and current ``num``) and their indices
+
+        iterate over ``nums``, if current ``num`` is found in the dictionary,
+        return its ``index`` along with the ``otherIndex`` from the dictionary,
+        which will be two indices whose elements add up to the ``target``
+
+    ------
 
     :param List[int] nums: List of integers.
     :param int target: The target sum.
