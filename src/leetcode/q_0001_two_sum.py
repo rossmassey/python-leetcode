@@ -16,9 +16,11 @@ not use the same element twice. You can return the answer in any order.
 """
 from typing import List, Dict
 
+
 def two_sum(nums: List[int], target: int) -> List[int]:
     """
-    :Explanation:
+    :Runtime: n
+    :Space: n
 
     use a dictionary ``indexOfComplements`` to store potential complements
     (difference of ``target`` and current ``num``) and their indices
@@ -26,12 +28,6 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     iterate over ``nums``, if current ``num`` is found in the dictionary,
     return its ``index`` along with the ``otherIndex`` from the dictionary,
     which will be two indices whose elements add up to the ``target``
-
-        =======  =====
-        Runtime  Space
-        =======  =====
-        n        n
-        =======  =====
 
     :param List[int] nums: List of integers.
     :param int target: The target sum.
