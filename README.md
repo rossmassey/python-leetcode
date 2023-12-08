@@ -7,6 +7,18 @@
 
 1. `pip install -r requirements.txt` 
 
+## Start a new problem
+
+#### Generate cookies.txt
+1. download extension such as https://github.com/hrdl-github/cookies-txt
+2. visit `leetcode.com`, click on extension icon, click 'Current site'
+3. save Netscape HTTP Cookie File to `scripts/leetcode_api/` named `cookies.txt`
+
+
+#### (WIP) Generate new solution
+1. `python3 scripts/leetcode_api/query_leetcode.py`
+2. this prints out problem information like title, difficulty, and code snippet
+
 ## Testing
 
 #### Run Unit Tests
