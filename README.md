@@ -1,5 +1,12 @@
 # Python Leetcode Solutions
 
+## Requirements
+
+- python3
+- pip
+
+1. `pip install -r requirements.txt` 
+
 ## Testing
 
 #### Run Unit Tests
@@ -10,12 +17,7 @@
 #### Doctest
 1. `cd docs && make doctest`
 
-see requirements below
-
 ## Sphinx Documentation
-
-#### Requirements
-1. `pip install -r requirements.txt`
 
 #### Generate Documentation
 1. `cd docs && make clean html`

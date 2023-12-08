@@ -1,0 +1,37 @@
+class Solution_{num_padded}:
+    """
+    `{difficulty} <https://leetcode.com/problems/{title_slug}/>`_
+    ------------------------------------------------
+
+    .. sidebar:: Constraints
+
+        {constraints}
+
+    {description}
+
+    :Example:
+
+    >>> Solution_{num_padded}.{func_name}({example_inputs})
+    {example_output}
+
+    """
+
+    {func_signature}
+        """
+        Args:
+            {func_args}
+
+        Returns:
+            {func_return}
+
+        ------
+
+        :Runtime:   ``O(x)``
+        :Space:     ``O(x)``
+
+        :Strategy:
+
+            TODO
+
+        """
+        {code}
