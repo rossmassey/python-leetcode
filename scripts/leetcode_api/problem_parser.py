@@ -99,35 +99,29 @@ def clean_html(text: str) -> str:
     Returns:
         str: human readable problem text
     """
-    # Replace <code>xx</code> with ``xx``, handling multiline and spaces
-    text = re.sub(r'<code>([\s\S]*?)</code>', r'``\1``', text)
+    code_pattern = r'<code>([\s\S]*?)</code>'
+    superscript_pattern = r'<sup>(.*?)</sup>'
+    bold_pattern = r'<strong(?: [^>]*)?>(.*?)</strong>'
+    italics_pattern = r'<em>(.*?)</em>'
+    nbsp_pattern = r'&nbsp;'
+    quote_pattern = r'&quot;'
+    font_tag_pattern = r'<font[^>]*>.*?</font>'
+    img_pattern = r'<img alt="" src="(.*?)" style=".*?" />'
+    html_junk_pattern = r'<[^>]+>'
+    less_than_pattern = r'&lt;'
+    greater_than_pattern = r'&gt;'
 
-    # Replace <sup>xx</sup> with ^xx
-    text = re.sub(r'<sup>(.*?)</sup>', r'^\1', text)
-
-    # Replace <strong ... >xx</strong> with **xx**
-    text = re.sub(r'<strong(?: [^>]*)?>(.*?)</strong>', r'**\1**', text)
-
-    # Just get rid of italics (remove <em> tags)
-    text = re.sub(r'<em>(.*?)</em>', r'\1', text)
-
-    # Replace &nbsp; with space
-    text = re.sub(r'&nbsp;', ' ', text)
-
-    # Replace &quot; with "
-    text = re.sub(r'&quot;', '"', text)
-
-    # Remove <font> tags (including attributes and contents)
-    text = re.sub(r'<font[^>]*>.*?</font>', '', text)
-
-    # Remove other HTML tags
-    text = re.sub(r'<[^>]+>', '', text)
-
-    # Replace &lt; with <
-    text = re.sub(r'&lt;', '<', text)
-
-    # Replace &gt; with >
-    text = re.sub(r'&gt;', '>', text)
+    text = re.sub(code_pattern, r'``\1``', text)
+    text = re.sub(superscript_pattern, r'^\1', text)
+    text = re.sub(bold_pattern, r'**\1**', text)
+    text = re.sub(italics_pattern, r'\1', text)  # remove italics
+    text = re.sub(nbsp_pattern, ' ', text)
+    text = re.sub(quote_pattern, '"', text)
+    text = re.sub(font_tag_pattern, '', text)
+    text = re.sub(img_pattern, ".. image:: \\1\n", text)  # rst format
+    text = re.sub(html_junk_pattern, '', text)
+    text = re.sub(less_than_pattern, '<', text)
+    text = re.sub(greater_than_pattern, '>', text)
 
     return text
 
