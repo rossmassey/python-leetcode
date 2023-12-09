@@ -1,6 +1,7 @@
 from typing import List, Dict
 
-class Solution_0001:
+
+class Solution0001:
     """
     `Easy <https://leetcode.com/problems/two-sum/>`_
     ------------------------------------------------
@@ -20,11 +21,11 @@ class Solution_0001:
 
     :Example:
 
-    >>> Solution_0001.two_sum([2, 7, 11, 15], 9)
+    >>> Solution0001.two_sum([2, 7, 11, 15], 9)
     [1, 0]
 
     """
-
+    @staticmethod
     def two_sum(nums: List[int], target: int) -> List[int]:
         """
         Args:

@@ -1,7 +1,8 @@
 import unittest
-from src.leetcode import Solution_0001
+from src.leetcode import Solution0001
 
-two_sum = Solution_0001.two_sum
+two_sum = Solution0001.two_sum
+
 
 class TwoSumTests(unittest.TestCase):
 
