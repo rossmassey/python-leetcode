@@ -27,68 +27,6 @@ def get_identifier_for(problem_num: int) -> list:
     return [-1, "not found"]
 
 
-def parse_python_snippet(code: str) -> dict:
-    """
-    parses python code snippet for function signature and information
-
-    Parameters:
-        code (str): raw text containing leetcode code snippet
-
-    Returns:
-        dict: dictionary containing extracted function signature and information
-    """
-    # Remove lines starting with #
-    code_lines = code.split('\n')
-    code = '\n'.join(
-        line for line in code_lines if not line.strip().startswith('#'))
-
-    # Function signature
-    func_signature_match = re.search(r'def (.+):', code)
-    if not func_signature_match:
-        raise ValueError("Function signature not found")
-
-    func_signature = func_signature_match.group(1)
-
-    # Function name
-    func_name_match = re.match(r'(\w+)', func_signature)
-    if not func_name_match:
-        raise ValueError("Function name not found")
-
-    func_name = func_name_match.group(1)
-
-    # Parameters and parameter types
-    params_match = re.search(r'\((.*?)\)', func_signature)
-    if not params_match:
-        raise ValueError("Parameters not found")
-
-    params_with_types = params_match.group(1).split(',')
-    params = []
-    param_types = []
-
-    for param in params_with_types:
-        param = param.strip()
-        if param != 'self':
-            if ':' in param:
-                p_name, p_type = param.split(':')
-                params.append(p_name.strip())
-                param_types.append(p_type.strip())
-            else:
-                params.append(param)
-                param_types.append(None)
-
-    # Return type
-    rtype_match = re.search(r'-> (.*)', func_signature)
-    rtype = rtype_match.group(1).strip() if rtype_match else None
-
-    return {
-        'func_signature': func_signature,
-        'func_name': func_name,
-        'params': params,
-        'param_types': param_types,
-        'rtype': rtype
-    }
-
-
 def clean_html(text: str) -> str:
     """
     cleans up leetcode problem content
@@ -126,36 +64,6 @@ def clean_html(text: str) -> str:
     return text
 
 
-def get_template_fields(slug: str) -> dict:
-    """
-    collects fields that will be used in template files
-
-    Parameters:
-        slug (str): leetcode title slug
-
-    Returns:
-        dict: fields like difficulty and func_name for template
-    """
-    lang = "python3"
-    fields = {}
-    problem_data = json.loads(network.fetch_graphql(
-        network.query_problem(slug))
-    )["data"]["question"]
-
-    for snippet in problem_data["codeSnippets"]:
-        if snippet["langSlug"] == lang:
-            code = snippet["code"]
-            fields = parse_python_snippet(code)
-
-    fields["num"] = problem_data["questionFrontendId"]
-    fields["difficulty"] = problem_data["difficulty"]
-    fields["title"] = problem_data["title"]
-    fields["title_slug"] = slug
-    fields["content"] = clean_html(problem_data["content"])
-
-    return fields
-
-
 def get_synced_code(question_id: int) -> str:
     """
     gets last synced/saved user code for leetcode problem
@@ -179,3 +87,163 @@ def get_synced_code(question_id: int) -> str:
         return "No synced code found"
     else:
         return synced_code["code"]
+
+
+def parse_leetcode_content(text: str) -> dict:
+    """
+    parses leetcode content
+
+    Parameters:
+        text (str): leetcode content field
+
+    Returns:
+        dict: parsed content with intro, examples, constraints, and follow up
+    """
+
+    # clean and split text
+    def clean_and_split(text: str) -> list:
+        return [item.strip() for item in text.split('\n') if item.strip()]
+
+    # clean and join text into a single string
+    def clean_and_join(text: str) -> str:
+        return ' '.join(clean_and_split(text))
+
+    # re patterns for different sections
+    example_pattern = r"\*\*Example (\d+):\*\*(.*?)(?:\.\. image:: (.*?))?\*\*Input:\*\*(.*?)\*\*Output:\*\*(.*?)(?:\*\*Explanation:\*\*(.*?))?(?=\*\*Example|\*\*Constraints|\*\*Follow up|$)"
+    constraints_pattern = r"\*\*Constraints:\*\*(.*?)(?=\*\*|$)"
+    follow_up_pattern = r"\*\*Follow up:\*\*(.*)"
+
+    # intro
+    intro = text.split("**Example 1:**")[0].strip()
+
+    #  examples
+    examples = []
+    for match in re.finditer(example_pattern, text, re.DOTALL):
+        example_number, _, image_url, input_text, output_text, explanation = match.groups()
+        example = {
+            "img": image_url.strip() if image_url else None,
+            "inputs": clean_and_split(input_text),
+            "output": clean_and_join(output_text),
+            "explanation": clean_and_join(explanation) if explanation else None
+        }
+        examples.append(example)
+
+    # constraints
+    constraints_match = re.search(constraints_pattern, text, re.DOTALL)
+    constraints = clean_and_split(constraints_match.group(1)) if constraints_match else []
+
+    # follow up
+    follow_up_match = re.search(follow_up_pattern, text, re.DOTALL)
+    follow_up = follow_up_match.group(1).strip() if follow_up_match else None
+
+    return {
+        "intro": intro,
+        "examples": examples,
+        "constraints": constraints,
+        "follow_up": follow_up
+    }
+
+
+def parse_python_snippet(code: str) -> dict:
+    """
+    parses python code snippet for function signature and information
+
+    Parameters:
+        code (str): raw text containing leetcode code snippet
+
+    Returns:
+        dict: dictionary containing extracted function signature and information
+    """
+    # remove comments
+    code_lines = code.split('\n')
+    code = '\n'.join(
+        line for line in code_lines if not line.strip().startswith('#'))
+
+    # function signature
+    func_signature_match = re.search(r'def (.+):', code)
+    if not func_signature_match:
+        raise ValueError("Function signature not found")
+
+    func_signature = func_signature_match.group(1)
+
+    # function name
+    func_name_match = re.match(r'(\w+)', func_signature)
+    if not func_name_match:
+        raise ValueError("Function name not found")
+
+    func_name = func_name_match.group(1)
+
+    # parameters
+    params_match = re.search(r'\((.*?)\)', func_signature)
+    if not params_match:
+        raise ValueError("Parameters not found")
+
+    params_with_types = params_match.group(1).split(',')
+    params = []
+    param_types = []
+
+    for param in params_with_types:
+        param = param.strip()
+        if param != 'self':
+            if ':' in param:
+                p_name, p_type = param.split(':')
+                params.append(p_name.strip())
+                param_types.append(p_type.strip())
+            else:
+                params.append(param)
+                param_types.append(None)
+
+    # return
+    rtype_match = re.search(r'-> (.*)', func_signature)
+    rtype = rtype_match.group(1).strip() if rtype_match else None
+
+    return {
+        'func_signature': func_signature,
+        'func_name': func_name,
+        'params': params,
+        'param_types': param_types,
+        'rtype': rtype
+    }
+
+
+def get_template_fields(slug: str) -> dict:
+    """
+    collects fields that will be used in template files
+
+    Parameters:
+        slug (str): leetcode title slug
+
+    Returns:
+        dict: fields like difficulty and func_name for template
+    """
+    lang = "python3"
+    fields = {}
+
+    # graphql request to get problem data
+    problem_data = json.loads(network.fetch_graphql(
+        network.query_problem(slug))
+    )["data"]["question"]
+
+    # grab code snippet for python
+    for snippet in problem_data["codeSnippets"]:
+        if snippet["langSlug"] == lang:
+            code = snippet["code"]
+            fields = parse_python_snippet(code)
+
+    # remove html and extract content sections
+    clean_content = clean_html(problem_data["content"])
+    content_fields = parse_leetcode_content(clean_content)
+
+    fields["num"] = problem_data["questionFrontendId"]
+    fields["difficulty"] = problem_data["difficulty"]
+    fields["title"] = problem_data["title"]
+    fields["title_slug"] = slug
+    fields["intro"] = content_fields["intro"]
+    fields["constraints"] = content_fields["constraints"]
+    fields["follow_up"] = content_fields["follow_up"]
+
+    fields["examples"] = []
+    for example in content_fields["examples"]:
+        fields["examples"].append(example)
+
+    return fields
