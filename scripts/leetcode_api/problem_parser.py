@@ -206,6 +206,47 @@ def parse_python_snippet(code: str) -> dict:
     }
 
 
+def expand_field_arrays(fields: dict) -> dict:
+    """
+    converts arrays of fields like examples into text with newlines
+
+    Parameters:
+        fields (dict): current parsed leetcode fields
+
+    Returns:
+        dict: sections fields added
+    """
+
+    # constraints array
+    constraints_section = ""
+    for constraint in fields["constraints"]:
+        constraints_section += f"* {constraint}\n"
+    fields["constraints_section"] = constraints_section
+
+    # examples array
+    examples_section = ""
+    for (i, example) in enumerate(fields["examples"], 1):
+        examples_section += f":Example {i}:\n\n"
+        examples_section += f">>> Solution{fields['num_padded']}."
+        examples_section += f"{fields['func_name']}({example['inputs'][0]})\n"
+        examples_section += f"{example['output']}\n\n"
+
+        if example["img"] is not None:
+            examples_section += f"..image:: {example['img']}\n\n"
+
+        if example["explanation"] is not None:
+            examples_section += f"{example['explanation']}\n\n"
+    fields["examples_section"] = examples_section
+
+    # params array
+    params_section = ""
+    for param, param_type in zip(fields["params"], fields["param_types"]):
+        params_section += f"{param} ({param_type}): TODO \n"
+    fields["params_section"] = params_section
+
+    return fields
+
+
 def get_template_fields(slug: str) -> dict:
     """
     collects fields that will be used in template files
@@ -227,23 +268,21 @@ def get_template_fields(slug: str) -> dict:
     # grab code snippet for python
     for snippet in problem_data["codeSnippets"]:
         if snippet["langSlug"] == lang:
-            code = snippet["code"]
-            fields = parse_python_snippet(code)
+            fields = parse_python_snippet(snippet["code"])
 
     # remove html and extract content sections
     clean_content = clean_html(problem_data["content"])
     content_fields = parse_leetcode_content(clean_content)
 
     fields["num"] = problem_data["questionFrontendId"]
+    fields["num_padded"] = fields["num"].zfill(4)
     fields["difficulty"] = problem_data["difficulty"]
     fields["title"] = problem_data["title"]
     fields["title_slug"] = slug
     fields["intro"] = content_fields["intro"]
     fields["constraints"] = content_fields["constraints"]
     fields["follow_up"] = content_fields["follow_up"]
+    fields["examples"] = content_fields["examples"]
 
-    fields["examples"] = []
-    for example in content_fields["examples"]:
-        fields["examples"].append(example)
-
+    fields = expand_field_arrays(fields)
     return fields
