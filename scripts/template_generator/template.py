@@ -63,7 +63,7 @@ def generate_doc(fields: dict) -> None:
     doc_path = os.path.join(SCRIPT_DIR, "../../docs/source/leetcode", doc_file_name)
 
     doc_template = read_template("doc_template.txt")
-    fields["title_underline"] = '-' * len(f"0000 - {fields["title"]}")
+    fields["doc_title_underline"] = '-' * len(f"0000 - {fields['title']}")
     filled_doc_template = doc_template.format_map(fields)
 
     write_file_contents(doc_path, filled_doc_template)

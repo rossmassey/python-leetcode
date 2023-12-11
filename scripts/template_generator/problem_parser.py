@@ -43,6 +43,7 @@ def clean_html(text: str) -> str:
     italics_pattern = r'<em>(.*?)</em>'
     nbsp_pattern = r'&nbsp;'
     quote_pattern = r'&quot;'
+    alt_quote_pattern = r'&#39;'
     tab_pattern = r'\t'
     font_tag_pattern = r'<font[^>]*>.*?</font>'
     img_pattern = r'<img alt="" src="(.*?)" style=".*?" />'
@@ -56,6 +57,7 @@ def clean_html(text: str) -> str:
     text = re.sub(italics_pattern, r'\1', text)  # remove italics
     text = re.sub(nbsp_pattern, ' ', text)
     text = re.sub(quote_pattern, '"', text)
+    text = re.sub(alt_quote_pattern, '"', text)
     text = re.sub(tab_pattern, '    ', text)
     text = re.sub(font_tag_pattern, '', text)
     text = re.sub(img_pattern, ".. image:: \\1\n", text)  # rst format
@@ -167,6 +169,10 @@ def parse_python_snippet(code: str) -> dict:
         raise ValueError("Function signature not found")
 
     func_signature = func_signature_match.group(1)
+
+    # get rid of self (for static methods)
+    # not good for class based solutions
+    func_signature = re.sub('self, ', '', func_signature)
 
     # function name
     func_name_match = re.match(r'(\w+)', func_signature)
@@ -287,6 +293,12 @@ def get_template_fields(question_id: str, slug: str) -> dict:
     fields["follow_up"] = content_fields["follow_up"]
     fields["examples"] = content_fields["examples"]
     fields["code_section"] = get_synced_code(question_id)
+
+    # calculate title underline
+    title_name = f"`#{fields['num']} - {fields['difficulty']} "
+    title_url = f"<https://leetcode.com/problems/{fields['title_slug']}/>`_"
+    title_length = len(title_name + title_url)
+    fields["title_underline"] = '-' * title_length
 
     fields = expand_field_arrays(fields)
     return fields

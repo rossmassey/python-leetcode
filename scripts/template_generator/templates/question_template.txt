@@ -1,7 +1,7 @@
 class Solution{num_padded}:
     """
     `#{num} - {difficulty} <https://leetcode.com/problems/{title_slug}/>`_
-    ------------------------------------------------
+    {title_underline}
 
     .. sidebar:: Constraints
 
