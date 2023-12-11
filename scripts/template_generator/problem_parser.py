@@ -43,6 +43,7 @@ def clean_html(text: str) -> str:
     italics_pattern = r'<em>(.*?)</em>'
     nbsp_pattern = r'&nbsp;'
     quote_pattern = r'&quot;'
+    tab_pattern = r'\t'
     font_tag_pattern = r'<font[^>]*>.*?</font>'
     img_pattern = r'<img alt="" src="(.*?)" style=".*?" />'
     html_junk_pattern = r'<[^>]+>'
@@ -55,6 +56,7 @@ def clean_html(text: str) -> str:
     text = re.sub(italics_pattern, r'\1', text)  # remove italics
     text = re.sub(nbsp_pattern, ' ', text)
     text = re.sub(quote_pattern, '"', text)
+    text = re.sub(tab_pattern, '    ', text)
     text = re.sub(font_tag_pattern, '', text)
     text = re.sub(img_pattern, ".. image:: \\1\n", text)  # rst format
     text = re.sub(html_junk_pattern, '', text)

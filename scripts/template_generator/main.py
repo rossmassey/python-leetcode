@@ -10,13 +10,17 @@ def main():
     """
     num = int(input("Enter problem number: "))
 
+    print(f"Finding {num}...")
     (question_id, slug) = problem_parser.get_identifier_for(num)
 
+    print(f"Getting content for '{slug}'...")
     fields = problem_parser.get_template_fields(question_id, slug)
-    title = fields["title"]
 
-    print(f"Writing templates for '{title}'")
+    print(f"Writing solution template...")
     template.generate_solution(fields)
+
+    print(f"Writing doc template...")
+    template.generate_doc(fields)
 
 
 if __name__ == "__main__":

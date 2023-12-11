@@ -2,29 +2,32 @@ import os
 import re
 import textwrap
 
+SCRIPT_DIR = os.path.dirname(__file__)
+
 
 def read_template(name: str) -> str:
-    script_dir = os.path.dirname(__file__)
-    template_path = os.path.join(script_dir, "templates/" + name)
+    template_path = os.path.join(SCRIPT_DIR, "templates/" + name)
     return read_file_contents(template_path)
 
 
-def fill_template(template: str, fields: dict) -> str:
+def fill_solution_template(template: str, fields: dict) -> str:
+    tab = ' ' * 4  # 4 spaces instead of \t
+
     fields["constraints_section"] = textwrap.indent(
         fields["constraints_section"],
-        '\t' * 2
+        tab * 2
     )
     fields["intro_section"] = textwrap.indent(
         fields["intro_section"],
-        '\t'
+        tab
     )
     fields["examples_section"] = textwrap.indent(
         fields["examples_section"],
-        '\t'
+        tab
     )
     fields["params_section"] = textwrap.indent(
         fields["params_section"],
-        '\t' * 3
+        tab * 3
     )
 
     # remove class/func from synced code
@@ -36,15 +39,38 @@ def fill_template(template: str, fields: dict) -> str:
 
 
 def generate_solution(fields: dict) -> None:
-    script_dir = os.path.dirname(__file__)
-
+    # create solution template
     solution_file_name = f"q_{fields['num_padded']}_{fields['title_slug_underscore']}.py"
-    solution_path = os.path.join(script_dir, "../../src/leetcode/", solution_file_name)
+    solution_path = os.path.join(SCRIPT_DIR, "../../src/leetcode/", solution_file_name)
 
     solution_template = read_template("question_template.txt")
-    filled_solution_template = fill_template(solution_template, fields)
+    filled_solution_template = fill_solution_template(solution_template, fields)
 
     write_file_contents(solution_path, filled_solution_template)
+
+    # add to leetcode package
+    leetcode_init_path = os.path.join(SCRIPT_DIR, "../../src/leetcode/", "__init__.py")
+    import_statement = f"from .{solution_file_name[:-3]} import Solution{fields['num_padded']}\n"
+    append_to_file(leetcode_init_path, import_statement)
+
+
+
+def generate_doc(fields: dict) -> None:
+    formatted_name = f"{fields['num_padded']}_{fields['title_slug_underscore']}"
+
+    # automodule file
+    doc_file_name = f"{formatted_name}.rst"
+    doc_path = os.path.join(SCRIPT_DIR, "../../docs/source/leetcode", doc_file_name)
+
+    doc_template = read_template("doc_template.txt")
+    fields["title_underline"] = '-' * len(f"0000 - {fields["title"]}")
+    filled_doc_template = doc_template.format_map(fields)
+
+    write_file_contents(doc_path, filled_doc_template)
+
+    # add to index import list
+    index_path = os.path.join(SCRIPT_DIR, "../../docs/source", "neetcode.rst")
+    append_to_file(index_path, f"   leetcode/{formatted_name}\n")
 
 
 def read_file_contents(file_path: str) -> str:
@@ -55,3 +81,8 @@ def read_file_contents(file_path: str) -> str:
 def write_file_contents(file_path: str, content: str) -> None:
     with open(file_path, 'w') as file:
         file.write(content)
+
+
+def append_to_file(file_path: str, text: str) -> None:
+    with open(file_path, 'a') as file:
+        file.write(text)
