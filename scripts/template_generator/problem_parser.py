@@ -247,7 +247,7 @@ def expand_field_arrays(fields: dict) -> dict:
     return fields
 
 
-def get_template_fields(slug: str) -> dict:
+def get_template_fields(question_id: str, slug: str) -> dict:
     """
     collects fields that will be used in template files
 
@@ -279,10 +279,12 @@ def get_template_fields(slug: str) -> dict:
     fields["difficulty"] = problem_data["difficulty"]
     fields["title"] = problem_data["title"]
     fields["title_slug"] = slug
-    fields["intro"] = content_fields["intro"]
+    fields["title_slug_underscore"] = slug.replace('-', '_')
+    fields["intro_section"] = content_fields["intro"]
     fields["constraints"] = content_fields["constraints"]
     fields["follow_up"] = content_fields["follow_up"]
     fields["examples"] = content_fields["examples"]
+    fields["code_section"] = get_synced_code(question_id)
 
     fields = expand_field_arrays(fields)
     return fields

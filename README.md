@@ -15,9 +15,14 @@
 3. save Netscape HTTP Cookie File to `scripts/leetcode_api/` named `cookies.txt`
 
 
-#### (WIP) Generate new solution
-1. `python3 scripts/leetcode_api/query_leetcode.py`
-2. this prints out problem information like title, difficulty, and code snippet
+#### Generate new solution template
+1. `python3 scripts/template_generator/main.py`
+2. this will autofill a `q_XXXX_title.py` template under `src/leetcode/`
+
+TODO: 
+- constraints section is stripping text lines
+- classes (e.g. Minstack) probably not handled correctly
+- generate doc file and unittest file
 
 ## Testing
 
@@ -67,8 +72,3 @@ Problem
 
    leetcode/XXXX_problem
 ```
-## TODO
-
-- Automate documentation generation
-- Automate solution/test case generation
-- Add these instructions to documentations

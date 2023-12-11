@@ -1,0 +1,7 @@
+.. _{num_padded}_{title_slug_underscore}:
+
+{num_padded} - {title}
+--------------
+
+.. automodule:: leetcode.q_{num_padded}_{title_slug_underscore}
+   :members:

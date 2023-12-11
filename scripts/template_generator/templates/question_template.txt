@@ -1,0 +1,32 @@
+class Solution{num_padded}:
+    """
+    `#{num} - {difficulty} <https://leetcode.com/problems/{title_slug}/>`_
+    ------------------------------------------------
+
+    .. sidebar:: Constraints
+
+{constraints_section}
+
+{intro_section}
+
+{examples_section}
+    """
+    @staticmethod
+    def {func_signature}:
+        """
+        Args:
+{params_section}
+        Returns:
+            {rtype}: TODO
+
+        ------
+
+        :Runtime:   ``O(x)``
+        :Space:     ``O(x)``
+
+        :Strategy:
+
+            TODO
+
+        """
+{code_section}
