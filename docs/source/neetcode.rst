@@ -7,7 +7,7 @@ Arrays and Hashing
 .. csv-table::
    :widths: 5, 30
 
-    "🟢", "XXXX - Valid Anagram"
+    "🟢", "0242 - Valid Anagram"
     "🟢", "0217 - Contains Duplicate"
     "🟢", ":ref:`0001_two_sum`"
     "🟨", "0049 - Group Anagrams"

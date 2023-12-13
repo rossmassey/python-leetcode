@@ -50,6 +50,8 @@ def clean_html(text: str) -> str:
     html_junk_pattern = r'<[^>]+>'
     less_than_pattern = r'&lt;'
     greater_than_pattern = r'&gt;'
+    true_pattern = r'true'
+    false_pattern = r'false'
 
     text = re.sub(code_pattern, r'``\1``', text)
     text = re.sub(superscript_pattern, r'^\1', text)
@@ -64,6 +66,8 @@ def clean_html(text: str) -> str:
     text = re.sub(html_junk_pattern, '', text)
     text = re.sub(less_than_pattern, '<', text)
     text = re.sub(greater_than_pattern, '>', text)
+    text = re.sub(true_pattern, 'True', text)
+    text = re.sub(false_pattern, 'False', text)
 
     return text
 
@@ -114,7 +118,7 @@ def parse_leetcode_content(text: str) -> dict:
 
     # re patterns for different sections
     example_pattern = r"\*\*Example (\d+):\*\*(.*?)(?:\.\. image:: (.*?))?\*\*Input:\*\*(.*?)\*\*Output:\*\*(.*?)(?:\*\*Explanation:\*\*(.*?))?(?=\*\*Example|\*\*Constraints|\*\*Follow up|$)"
-    constraints_pattern = r"\*\*Constraints:\*\*(.*?)(?=\*\*|$)"
+    constraints_pattern = r"\*\*Constraints:\*\*(.*?)(?=\*\*F|$)"
     follow_up_pattern = r"\*\*Follow up:\*\*(.*)"
 
     # intro
@@ -277,6 +281,7 @@ def get_template_fields(question_id: str, slug: str) -> dict:
     for snippet in problem_data["codeSnippets"]:
         if snippet["langSlug"] == lang:
             fields = parse_python_snippet(snippet["code"])
+            break
 
     # remove html and extract content sections
     clean_content = clean_html(problem_data["content"])

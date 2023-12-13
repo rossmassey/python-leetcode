@@ -20,9 +20,7 @@
 2. this will autofill a `q_XXXX_title.py` template under `src/leetcode/`
 
 TODO: 
-- constraints section is stripping text lines
-- classes (e.g. Minstack) probably not handled correctly
-- generate doc file and unittest file
+- generate unittest file?
 
 ## Testing
 

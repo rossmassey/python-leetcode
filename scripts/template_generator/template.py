@@ -72,6 +72,14 @@ def generate_doc(fields: dict) -> None:
     index_path = os.path.join(SCRIPT_DIR, "../../docs/source", "neetcode.rst")
     append_to_file(index_path, f"   leetcode/{formatted_name}\n")
 
+    # update ref link in neetcode index
+    index_text = read_file_contents(index_path)
+    human_text = f"{fields['num_padded']} - {fields['title']}"
+    ref_text = f":ref:`{fields['num_padded']}_{fields['title_slug_underscore']}`"
+    index_text = index_text.replace(human_text, ref_text)
+
+    write_file_contents(index_path, index_text)
+
 
 def read_file_contents(file_path: str) -> str:
     with open(file_path, 'r') as file:
