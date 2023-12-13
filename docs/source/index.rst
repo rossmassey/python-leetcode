@@ -10,11 +10,12 @@ Documentation
    :maxdepth: 1
 
    neetcode
+   doc_overview
+   template_guide
 
-Indicies
+Modules
 --------
 
-* :ref:`genindex`
 * :ref:`modindex`
 
 
