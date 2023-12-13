@@ -15,14 +15,6 @@ def fetch_graphql(payload: dict) -> str:
     Returns:
         str: JSON format text response
     """
-    # copy from leetcode.com -> Network tab -> File: /graphql/ -> Cookies
-    # cookies = {
-    #     "_dd_s": "...",
-    #     "csrftoken": "...",
-    #     "LEETCODE_SESSION": "..."
-    # }
-
-    # or use extension to export cookies.txt from leetcode.com
     cookies = read_cookies()  # TODO: add try, ask for cookies to be pasted?
 
     response = requests.post(GRAPHQL_URL, json=payload, cookies=cookies)

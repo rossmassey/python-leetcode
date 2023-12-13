@@ -7,16 +7,14 @@ Documentation is located under the ``docs/`` folder
 
 It is built with `Sphinx <https://www.sphinx-doc.org/en/master/>`_
 
-Class level documentation details problem information, overview, constraints,
+**Class** level documentation details problem information, overview, constraints,
 and examples (that can be tested wtih ``doctest``)
 
-Function level documentation details function information as well as notes on
+**Function** level documentation details function information as well as notes on
 which strategy was employed and the time/space complexity
 
-.. note::
-    Docstring ``Args/Returns`` format follows the Google style:
-
-    `Google Python Style Guide <https://google.github.io/styleguide/pyguide.html#383-functions-and-methods>`_
+Docstring Args/Returns format follows the
+`Google Python Style Guide <https://google.github.io/styleguide/pyguide.html#383-functions-and-methods>`_
 
 Building Docs
 ^^^^^^^^^^^^^
