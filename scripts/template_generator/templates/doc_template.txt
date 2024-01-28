@@ -1,6 +1,6 @@
 .. _{num_padded}_{title_slug_underscore}:
 
-{num_padded} - {title}
+{doc_title}
 {doc_title_underline}
 
 .. automodule:: leetcode.q_{num_padded}_{title_slug_underscore}

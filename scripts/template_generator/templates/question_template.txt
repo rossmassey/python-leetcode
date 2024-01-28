@@ -1,13 +1,13 @@
 class Solution{num_padded}:
     """
-    `#{num} - {difficulty} <https://leetcode.com/problems/{title_slug}/>`_
-    {title_underline}
+    {title_header}
+    {title_header_underline}
 
     .. sidebar:: Constraints
 
 {constraints_section}
 
-{intro_section}
+{description_section}
 
 {examples_section}
     """
@@ -17,7 +17,7 @@ class Solution{num_padded}:
         Args:
 {params_section}
         Returns:
-            {rtype}: TODO
+            {func[rtype]}: TODO
 
         ------
 

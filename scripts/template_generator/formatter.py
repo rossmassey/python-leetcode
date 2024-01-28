@@ -33,7 +33,7 @@ def _indent(text: str, level: int) -> str:
 def _format_examples(fields: dict) -> str:
     formatted_examples = []
 
-    number = f'{fields['num']:04}'
+    number = f'{int(fields['num']):04}'
     class_name = f'Solution{number}'
     func_name = f'>>> {class_name}.{fields['func']['name']}'
 

@@ -2,10 +2,7 @@
 
 import fetch_leetcode_problem
 
-import template
-import formatter
-
-from pprint import pprint
+import template_processor
 
 
 def main():
@@ -31,17 +28,31 @@ def main():
 
     if not fields:
         print("Problem not found")
-        exit(0)
+        exit(1)
 
-    template_fields = formatter.format_fields(fields)
+    template_processor.process_templates(fields)
 
-    pprint(template_fields)
+
+
+    # fields['num_padded']              # create
+    # fields['title_slug_underscore']   # create
+    # fields['constraints_section']     #
+    # fields['intro_section']           # description_section
+    # fields['examples_section']        #
+    # fields['params_section']          #
+    # fields['code_section']            # hmm
+    # fields['title_slug']              # slug
+    # fields['title_underline']         # create
+    # fields['func_signature']          # create
+    # fields['rtype'] =                 # func.rtype
 
     print(f"Writing solution template...")
     # template.generate_solution(template_fields)
 
     print(f"Writing doc template...")
     # template.generate_doc(template_fields)
+
+
 
 
 if __name__ == "__main__":
