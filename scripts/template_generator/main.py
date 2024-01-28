@@ -1,14 +1,14 @@
 #!/usr/bin/python3
+"""
+Interactive script to get problem info from leetcode
+"""
 
 import fetch_leetcode_problem
 
-import template_processor
+import _template_processor
 
 
 def main():
-    """
-    interactive script to get problem info from leetcode
-    """
     if fetch_leetcode_problem.count_problems() == 0:
         update = input("No problems in database ... update problems? (y/n) ")
 
@@ -33,8 +33,9 @@ def main():
 
     # TODO: move this into a package?
     print("Writing templates...")
-    template_processor.process_templates(fields)
+    _template_processor.process_templates(fields)
     print("Done")
+
 
 if __name__ == "__main__":
     main()

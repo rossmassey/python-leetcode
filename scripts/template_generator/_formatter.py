@@ -1,3 +1,6 @@
+"""
+This module contains functions for formatting the template fields
+"""
 import textwrap
 
 # 4 space tab
@@ -5,6 +8,16 @@ TAB = 4 * ' '
 
 
 def format_fields(fields: dict) -> dict:
+    """
+    Expand list fields into paragraphs and indent content to align with
+    associated docstring sections
+
+    Args:
+        fields (dict): fields containing problem info to format
+
+    Returns:
+        dict: formatted fields
+    """
     description = fields['description']
     examples = _format_examples(fields)
     constraints = _format_constraints(fields['constraints'])
@@ -21,10 +34,33 @@ def format_fields(fields: dict) -> dict:
 
 
 def _indent(text: str, level: int) -> str:
+    """
+    Indent text by level
+
+    Args:
+        text (str): text to indent
+        level (int): how many levels to indent
+
+    Returns:
+        str: indented text
+    """
     return textwrap.indent(text, TAB * level)
 
 
 def _format_examples(fields: dict) -> str:
+    """
+    Goes through each example dict and formats it for docstring
+
+    Create doctest from example input and output
+
+    Includes image and explanation if available
+
+    Args:
+        fields (dict): fields containing problem info to format
+
+    Returns:
+        str: formatted examples
+    """
     formatted_examples = []
 
     number = f'{int(fields['num']):04}'
@@ -48,10 +84,28 @@ def _format_examples(fields: dict) -> str:
 
 
 def _format_constraints(constraints: list) -> str:
+    """
+    Format constraints for docstring, as a rst list
+
+    Args:
+        constraints (list): list of constraints
+
+    Returns:
+        str: formatted constraints
+    """
     return '\n'.join(f'* {constraint}' for constraint in constraints)
 
 
 def _format_params(func: dict) -> str:
+    """
+    Format params for function docstring, google style guide format
+
+    Args:
+        func (dict): function info
+
+    Returns:
+        str: formatted params
+    """
     formatted_params = []
 
     for param, param_type in zip(func['params'], func['param_types']):
