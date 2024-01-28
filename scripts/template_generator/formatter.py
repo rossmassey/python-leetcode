@@ -5,22 +5,16 @@ TAB = 4 * ' '
 
 
 def format_fields(fields: dict) -> dict:
-    description = _indent(fields['description'], 1)
-
+    description = fields['description']
     examples = _format_examples(fields)
-    examples = _indent(examples, 1)
-
-    constraints = '\n'.join(fields['constraints'])
-    constraints = _indent(constraints, 2)
-
+    constraints = _format_constraints(fields['constraints'])
     params = _format_params(fields['func'])
-    params = _indent(params, 3)
 
     formatted_fields = {
-        'description_section': description,
-        'examples_section':    examples,
-        'constraints_section': constraints,
-        'params_section':      params
+        'description_section': _indent(description, 1),
+        'examples_section':    _indent(examples, 1),
+        'constraints_section': _indent(constraints, 2),
+        'params_section':      _indent(params, 3)
     }
 
     return {**fields, **formatted_fields}
@@ -46,11 +40,15 @@ def _format_examples(fields: dict) -> str:
             formatted_example += f'{example['img']}\n\n'
 
         if example['explanation']:
-            formatted_example += f'{example['explanation']}\n'
+            formatted_example += f'{example['explanation'].lstrip()}\n'
 
         formatted_examples.append(formatted_example)
 
     return '\n'.join(formatted_examples)
+
+
+def _format_constraints(constraints: list) -> str:
+    return '\n'.join(f'* {constraint}' for constraint in constraints)
 
 
 def _format_params(func: dict) -> str:
