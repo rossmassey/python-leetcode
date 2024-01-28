@@ -31,6 +31,7 @@ def main():
     else:
         print(f"Found {fields['title']}")
 
+    # TODO: move this into a package?
     print("Writing templates...")
     template_processor.process_templates(fields)
     print("Done")

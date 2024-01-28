@@ -31,14 +31,14 @@ def append_line(relative_path: str, line: str):
         file.write(line + '\n')
 
 
-def replace_line(relative_path: str, line: str, replacement: str):
+def replace_line(relative_path: str, pattern: str, replacement: str):
     absolute_path = get_absolute_path(relative_path)
     with open(absolute_path, 'r', encoding='utf-8') as file:
         lines = file.readlines()
 
     with open(absolute_path, 'w', encoding='utf-8') as file:
         for line in lines:
-            if line.strip("\n") == line:
-                file.write(replacement + '\n')
+            if pattern in line:
+                file.write(line.replace(pattern, replacement))
             else:
                 file.write(line)

@@ -1,30 +1,41 @@
 import formatter
 import file
 
+# sphinx rst use 3 space
+DOC_TAB = ' ' * 3
 
 def process_templates(fields: dict):
     fields = formatter.format_fields(fields)
-    fields = add_template_fields(fields)
+    fields = _add_template_fields(fields)
 
-    # process solution
+    # solution template
     solution_template = file.fill_template("question_template.txt", fields)
-    solution_file = f'q_{fields['num_padded']}_{fields['title_slug_underscore']}.py'
-    solution_path = f'src/leetcode/{solution_file}'
+    solution_file_name = f'q_{fields['num_padded']}_{fields['title_slug_underscore']}'
+    solution_path = f'src/leetcode/{solution_file_name}.py'
     file.write_to_repo(solution_path, solution_template)
 
-    # TODO add to leetcode __init__
+    # src/leetcode/__init__ import
+    package_init = f'src/leetcode/__init__.py'
+    import_stmt = f'from .{solution_file_name} import Solution{fields['num_padded']}'
+    file.append_line(package_init, import_stmt)
 
-    # process doc
+    # doc automodule
     doc_template = file.fill_template("doc_template.txt", fields)
-    doc_file = f'{fields['num_padded']}_{fields['title_slug_underscore']}.rst'
-    doc_path = f'docs/source/leetcode/{doc_file}'
+    doc_file_name = f'{fields['num_padded']}_{fields['title_slug_underscore']}'
+    doc_path = f'docs/source/leetcode/{doc_file_name}.rst'
     file.write_to_repo(doc_path, doc_template)
 
-    # TODO add to sphinx toc
-    # TODO update neetcode link
+    # sphinx toc (located in neetcode.rst)
+    toc_location = f'docs/source/neetcode.rst'
+    toc_entry = f'{DOC_TAB}leetcode/{doc_file_name}'
+    file.append_line(toc_location, toc_entry)
 
+    # update neetcode reference
+    entry = f'{fields['num_padded']} - {fields['title']}'
+    doc_ref = f':ref:`{fields['num_padded']}_{fields['title_slug_underscore']}`'
+    file.replace_line(toc_location, entry, doc_ref)
 
-def add_template_fields(fields: dict) -> dict:
+def _add_template_fields(fields: dict) -> dict:
     num_padded = f'{int(fields["num"]):04}'
     title_slug_underscore = fields['slug'].replace('-', '_')
 
