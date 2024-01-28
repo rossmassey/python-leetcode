@@ -1,6 +1,6 @@
 import os
 import re
-import textwrap
+import formatter
 
 SCRIPT_DIR = os.path.dirname(__file__)
 

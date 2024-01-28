@@ -1,6 +1,3 @@
-from typing import List, Optional # common imports, delete if not needed
-
-
 class Solution{num_padded}:
     """
     `#{num} - {difficulty} <https://leetcode.com/problems/{title_slug}/>`_
