@@ -1,8 +1,8 @@
 """
 This module contains the logic for processing the template files and references
 """
-import _formatter
-import _file
+from ._formatter import format_fields
+from ._file import fill_template, write_to_repo, append_line, replace_line
 
 # sphinx rst use 3 space
 DOC_TAB = ' ' * 3
@@ -16,35 +16,35 @@ def process_templates(fields: dict):
         fields (dict): problem info
     """
 
-    fields = _formatter.format_fields(fields)
+    fields = format_fields(fields)
     fields = _add_template_fields(fields)
 
     # write solution template
-    solution_template = _file.fill_template("question_template.txt", fields)
+    solution_template = fill_template("question_template.txt", fields)
     solution_file_name = f'q_{fields['num_padded']}_{fields['title_slug_underscore']}'
     solution_path = f'src/leetcode/{solution_file_name}.py'
-    _file.write_to_repo(solution_path, solution_template)
+    write_to_repo(solution_path, solution_template)
 
     # add src/leetcode/__init__ import
     package_init = f'src/leetcode/__init__.py'
     import_stmt = f'from .{solution_file_name} import Solution{fields['num_padded']}'
-    _file.append_line(package_init, import_stmt)
+    append_line(package_init, import_stmt)
 
     # create doc automodule file
-    doc_template = _file.fill_template("doc_template.txt", fields)
+    doc_template = fill_template("doc_template.txt", fields)
     doc_file_name = f'{fields['num_padded']}_{fields['title_slug_underscore']}'
     doc_path = f'docs/source/leetcode/{doc_file_name}.rst'
-    _file.write_to_repo(doc_path, doc_template)
+    write_to_repo(doc_path, doc_template)
 
     # add to sphinx table of contents
     toc_location = f'docs/source/neetcode.rst'
     toc_entry = f'{DOC_TAB}leetcode/{doc_file_name}'
-    _file.append_line(toc_location, toc_entry)
+    append_line(toc_location, toc_entry)
 
     # update neetcode reference
     entry = f'{fields['num_padded']} - {fields['title']}'
     doc_ref = f':ref:`{fields['num_padded']}_{fields['title_slug_underscore']}`'
-    _file.replace_line(toc_location, entry, doc_ref)
+    replace_line(toc_location, entry, doc_ref)
 
 
 def _add_template_fields(fields: dict) -> dict:

@@ -5,7 +5,7 @@ Interactive script to get problem info from leetcode
 import os
 import fetch_leetcode_problem
 
-import _template_processor
+from ._template_processor import process_templates
 
 
 def main():
@@ -45,7 +45,7 @@ def main():
         print(f"Found {fields['title']}")
 
     print("Writing templates...")
-    _template_processor.process_templates(fields)
+    process_templates(fields)
     print("Done")
 
 
