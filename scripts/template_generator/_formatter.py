@@ -25,6 +25,8 @@ def format_fields(fields: dict) -> dict:
 
     if fields['code']:
         synced_code = _format_code(fields['code'])
+    else:
+        synced_code = ''
 
     formatted_fields = {
         # content
@@ -36,7 +38,7 @@ def format_fields(fields: dict) -> dict:
         'params_section':      _indent(params, 3),
 
         # synced code
-        'synced_code':         synced_code or ''  # already indented
+        'synced_code':         synced_code  # already indented
     }
 
     return {**fields, **formatted_fields}
