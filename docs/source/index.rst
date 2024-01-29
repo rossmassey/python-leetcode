@@ -1,7 +1,10 @@
-.. Python Leetcode Solutions documentation master file, created by
-   sphinx-quickstart on Tue Dec  5 01:51:05 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+#########################
+Python Leetcode Solutions
+#########################
+
+.. _python-leetcode: https://github.com/rossmassey/python-leetcode
+
+This is the documentation for my `python-leetcode`_ repo.
 
 Articles
 ========
@@ -12,10 +15,11 @@ This section has some articles explaining the code in this repository.
    :maxdepth: 1
 
    neetcode
+   folder_structure
    doc_overview
 
-Documentation
-=============
+Scripts
+=======
 
 This section has documentation for the scripts in this repository.
 
@@ -26,8 +30,6 @@ This section has documentation for the scripts in this repository.
    preview_docs_documentation
 
 Modules
---------
+=======
 
 * :ref:`modindex`
-
-

@@ -1,11 +1,15 @@
 .. _documentation-guide:
 
-Documentation Guide
--------------------
+**************************
+How documentation is built
+**************************
+
+.. _Sphinx: https://www.sphinx-doc.org/en/master/
+.. _Google Style Guide: https://google.github.io/styleguide/pyguide.html#383-functions-and-methods
 
 Documentation is located under the ``docs/`` folder
 
-It is built with `Sphinx <https://www.sphinx-doc.org/en/master/>`_
+It is built with `Sphinx`_
 
 **Class** level documentation details problem information, overview, constraints,
 and examples (that can be tested wtih ``doctest``)
@@ -13,8 +17,8 @@ and examples (that can be tested wtih ``doctest``)
 **Function** level documentation details function information as well as notes on
 which strategy was employed and the time/space complexity
 
-Docstring Args/Returns format follows the
-`Google Python Style Guide <https://google.github.io/styleguide/pyguide.html#383-functions-and-methods>`_
+Docstring Args/Returns format follows the `Google Style Guide`_
+
 
 Building Docs
 ^^^^^^^^^^^^^

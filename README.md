@@ -2,35 +2,35 @@
 
 ## Requirements
 
-- python3
+- python (>3.8)
 - pip
 
-1. `pip install -r requirements.txt` 
+0. (Optional) Activate venv
+
+    `pip -m venv venv; source venv/bin/activate`
+
+1. Install dependencies
+    
+    `pip install -r requirements.txt` 
 
 ## Start a new problem
+`python scripts/template_generator/template_generator.py`
 
-#### Generate cookies.txt
-1. download extension such as https://github.com/hrdl-github/cookies-txt
-2. visit `leetcode.com`, click on extension icon, click 'Current site'
-3. save Netscape HTTP Cookie File to `scripts/leetcode_api/` named `cookies.txt`
+This will autofill a `q_XXXX_title.py` template under `src/leetcode/`
 
-
-#### Generate new solution template
-1. `python3 scripts/template_generator/main.py`
-2. this will autofill a `q_XXXX_title.py` template under `src/leetcode/`
-
-TODO: 
-- generate unittest file?
+See documentation for how to use
 
 ## Testing
 
-#### Run Unit Tests
+#### Doctest
+1. `cd docs && make doctest`
+
+#### Run Unit Tests (deprecated)
 1. `python3 -m unittest`
 
 `unittest` comes with python
 
-#### Doctest
-1. `cd docs && make doctest`
+Not using at moment
 
 ## Sphinx Documentation
 
@@ -40,33 +40,13 @@ TODO:
 
 #### Documentation Webserver
 1. `python3 scripts/preview-docs.py`
-2. this will run a webserver at http://localhost:8000
-3. this also runs doctest
+2. This will run a webserver at http://localhost:8000
+3. This also runs doctest
 
-press `r` to re-build/re-test, and `q` to quit
+Press `r` to re-build/re-test, and `q` to quit
 
-#### Documentation Guide
-1. follow format of `q_0001_two_sum` docstring
-2. create `docs/source/leetcode/xxxx_problem.rst`
-```rst
-.. _XXXX_problem:
+#### Published Documentation
 
-Problem
--------
+The `gh-pages.yml` action builds and publishes the Sphinx docs to GitHub pages
 
-.. automodule:: leetcode.q_xxxx_problem
-   :members:
-```
-3. update `neetcode.rst` for link matching rst label `_problem` above
-```
-:ref:`problem`
-```
-4. add to toctree directive at bottom of `neetcode.rst`
-```
-:In Order:
-
-.. toctree::
-   :maxdepth: 1
-
-   leetcode/XXXX_problem
-```
+It is accessible at: https://rossmassey.github.io/python-leetcode/

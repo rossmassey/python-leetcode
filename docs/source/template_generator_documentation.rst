@@ -1,7 +1,8 @@
 .. _template-generator-doc:
 
-Template Generator Documentation
---------------------------------
+******************
+Template Generator
+******************
 
 template_generator.py
 =====================

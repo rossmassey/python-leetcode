@@ -1,7 +1,8 @@
 .. _preview-docs-doc:
 
-Preview Docs Documentation
---------------------------
+************
+Preview Docs
+************
 
 preview_docs.py
 ===============
