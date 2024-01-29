@@ -53,6 +53,12 @@ Alternatively, using Chrome or Firefox dev tools:
 :Template Generator:
 
 .. automodule:: scripts.template_generator.template_generator
+   :undoc-members:
 
+:Template Processor:
+
+.. automodule:: scripts.template_generator._template_processor
+   :members:
+   :private-members:
 
 

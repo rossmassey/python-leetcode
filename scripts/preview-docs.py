@@ -24,18 +24,14 @@ def get_abs_path():
 def build_docs():
     abs_path = get_abs_path()
 
-    subprocess.run(["make", "clean"], cwd=abs_path)
-    return subprocess.run(["make", "html"], cwd=abs_path)
+    subprocess.run(["make", "clean"], cwd=abs_path, shell=True)
+    return subprocess.run(["make", "html"], cwd=abs_path, shell=True)
 
 
 def test_docs():
     abs_path = get_abs_path()
 
-    return subprocess.run(["make", "doctest"], cwd=abs_path)
-
-
-# Initial build
-build_docs()
+    return subprocess.run(["make", "doctest"], cwd=abs_path, shell=True)
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
@@ -43,23 +39,27 @@ class Handler(http.server.SimpleHTTPRequestHandler):
         super().__init__(*args, directory=DIRECTORY, **kwargs)
 
 
-# Start the server in a separate thread
-server_thread = threading.Thread(target=run_server)
-server_thread.daemon = True
-server_thread.start()
+if __name__ == "__main__":
+    # Initial build
+    build_docs()
 
-# Main loop for user input
-try:
-    while True:
-        test_docs()
-        print(f"\nHosting at http://localhost:{PORT}\n")
-        command = input("Enter 'r' to rebuild docs, or 'q' to quit: ")
-        if command.lower() == 'r':
-            build_docs()
-            print(f"Rebuilt the documentation at http://localhost:{PORT}")
-        elif command.lower() == 'q':
-            break
-except KeyboardInterrupt:
-    pass
+    # Start the server in a separate thread
+    server_thread = threading.Thread(target=run_server)
+    server_thread.daemon = True
+    server_thread.start()
 
-print("\nExiting...")
+    # Main loop for user input
+    try:
+        while True:
+            test_docs()
+            print(f"\nHosting at http://localhost:{PORT}\n")
+            command = input("Enter 'r' to rebuild docs, or 'q' to quit: ")
+            if command.lower() == 'r':
+                build_docs()
+                print(f"Rebuilt the documentation at http://localhost:{PORT}")
+            elif command.lower() == 'q':
+                break
+    except KeyboardInterrupt:
+        pass
+
+    print("\nExiting...")
