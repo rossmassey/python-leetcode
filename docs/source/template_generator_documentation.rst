@@ -3,29 +3,29 @@
 Template Generator Documentation
 --------------------------------
 
-template_generator
-==================
+template_generator.py
+=====================
 
 .. automodule:: scripts.template_generator.template_generator
    :members:
    :private-members:
 
-_template_processor
-===================
+_template_processor.py
+======================
 
 .. automodule:: scripts.template_generator._template_processor
    :members:
    :private-members:
 
-_formatter
-==========
+_formatter.py
+=============
 
 .. automodule:: scripts.template_generator._formatter
    :members:
    :private-members:
 
-_file
-=====
+_file.py
+========
 
 .. automodule:: scripts.template_generator._file
    :members:

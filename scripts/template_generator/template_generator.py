@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-Interactive script to get problem info from leetcode for given ``num``
+Script to get problem info and synced user code from leetcode.
 
-This script will:
+Automatically creates templates for problem and updates documentation.
 
 - create ``src/leetcode/q_num_title.py``
     - adds LeetCode problem name, difficulty, description, constraints
@@ -40,7 +40,6 @@ def main():
     except Exception as error:
         print(f'{type(error)}: {error}')
         print('No synced code will be available')
-
 
     # local db acts as lookup table for problem num -> title slug/question id
     if fetch_leetcode_problem.count_problems() == 0:
