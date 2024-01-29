@@ -88,5 +88,4 @@ def _add_template_fields(fields: dict) -> dict:
         'doc_title':              doc_title,
         'doc_title_underline':    '-' * len(doc_title),
         'func_signature':         func_signature,
-        'code_section':           'tee hee'
     }

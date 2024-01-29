@@ -2,13 +2,19 @@
 """
 Interactive script to get problem info from leetcode
 """
-
+import os
 import fetch_leetcode_problem
 
 import _template_processor
 
 
 def main():
+    # cookies token for synced user code
+    script_dir = os.path.dirname(__file__)
+    cookie_path = os.path.join(script_dir, 'cookies.txt')
+    fetch_leetcode_problem.load_cookie(cookie_path)
+
+    # local db acts as lookup table for problem num -> title slug/question id
     if fetch_leetcode_problem.count_problems() == 0:
         update = input("No problems in database ... update problems? (y/n) ")
 
@@ -17,6 +23,7 @@ def main():
         else:
             exit(0)
 
+    # ask user for problem number
     try:
         num = int(input("Enter problem number: "))
     except ValueError:
@@ -31,7 +38,6 @@ def main():
     else:
         print(f"Found {fields['title']}")
 
-    # TODO: move this into a package?
     print("Writing templates...")
     _template_processor.process_templates(fields)
     print("Done")

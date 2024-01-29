@@ -22,12 +22,19 @@ def format_fields(fields: dict) -> dict:
     examples = _format_examples(fields)
     constraints = _format_constraints(fields['constraints'])
     params = _format_params(fields['func'])
+    synced_code = _format_code(fields['code'])
 
     formatted_fields = {
+        # content
         'description_section': _indent(description, 1),
         'examples_section':    _indent(examples, 1),
         'constraints_section': _indent(constraints, 2),
-        'params_section':      _indent(params, 3)
+
+        # doc string
+        'params_section':      _indent(params, 3),
+
+        # synced code
+        'synced_code':         synced_code  # already indented
     }
 
     return {**fields, **formatted_fields}
@@ -115,3 +122,24 @@ def _format_params(func: dict) -> str:
         formatted_params.append(f'{param}({param_type}): TODO')
 
     return '\n'.join(formatted_params)
+
+
+def _format_code(code: str) -> str:
+    """
+    Removes class/func signature
+
+    Assume only implementing a single function
+
+    Args:
+        code (str): synced user code
+
+    Returns:
+        str: user code without signatures (indented)
+    """
+    code_body = []
+    for line in code.split('\n'):
+        if 'def' in line or 'class' in line:
+            continue
+        code_body.append(line)
+
+    return '\n'.join(code_body)
