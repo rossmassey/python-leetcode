@@ -38,7 +38,7 @@ It also
     * creates ``docs/source/leetocode/XXXX_problem.rst`` for ``automodule``
     * updates ``docs/source/neetcode.rst`` references
 
-See :ref:`Template Guide <template-guide>` for more information
+See :ref:`Template Generator Documentation <template-generator-doc>` for more information
 
 Manual Guide
 ^^^^^^^^^^^^

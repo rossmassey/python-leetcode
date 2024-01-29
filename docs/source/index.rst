@@ -11,7 +11,7 @@ Documentation
 
    neetcode
    doc_overview
-   template_guide
+   template_generator_documentation
 
 Modules
 --------

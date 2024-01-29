@@ -1,6 +1,25 @@
 #!/usr/bin/python3
 """
-Interactive script to get problem info from leetcode
+Interactive script to get problem info from leetcode for given ``num``
+
+This script will:
+
+- create ``src/leetcode/q_num_title.py``
+    - adds LeetCode problem name, difficulty, description, constraints
+    - generate doctest from examples
+    - generate docstring from code snippet
+    - sync user code from LeetCode if available
+
+- create ``docs/source/leetcode/num_title.rst``
+    - generates Sphinx documentation
+
+- updates ``docs/source/neetcode.rst``
+    - update problem reference
+
+This expects ``cookies.txt`` to be in same directory
+
+See `rossmassey.fetch-leetcode-problem <https://pypi.org/project/rossmassey.fetch-leetcode-problem/>`_
+for usage on ``cookies.txt`` and updating problem listing
 """
 import os
 import fetch_leetcode_problem
@@ -9,6 +28,9 @@ from ._template_processor import process_templates
 
 
 def main():
+    """
+    Main entry point
+    """
     # cookies token for synced user code
     script_dir = os.path.dirname(__file__)
     cookie_path = os.path.join(script_dir, 'cookies.txt')

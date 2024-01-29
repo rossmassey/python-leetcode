@@ -32,6 +32,9 @@ exclude_patterns = []
 # sys.path.insert(0, os.path.abspath('../../scripts/template_generator'))
 sys.path.insert(0, os.path.abspath('../../'))
 
+# only show final name
+add_module_names = False
+
 doctest_global_setup = '''
 from src.leetcode import *
 '''
