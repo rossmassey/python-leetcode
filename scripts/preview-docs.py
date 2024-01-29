@@ -9,6 +9,8 @@ import threading
 PORT = 8000
 DIRECTORY = "../docs/build/html"
 
+IS_WIN = os.name == 'nt'  # check if windows os (new technology)
+
 
 def run_server():
     with socketserver.TCPServer(("", PORT), Handler) as httpd:
@@ -24,14 +26,14 @@ def get_abs_path():
 def build_docs():
     abs_path = get_abs_path()
 
-    subprocess.run(["make", "clean"], cwd=abs_path, shell=True)
-    return subprocess.run(["make", "html"], cwd=abs_path, shell=True)
+    subprocess.run(["make", "clean"], cwd=abs_path, shell=IS_WIN)
+    return subprocess.run(["make", "html"], cwd=abs_path, shell=IS_WIN)
 
 
 def test_docs():
     abs_path = get_abs_path()
 
-    return subprocess.run(["make", "doctest"], cwd=abs_path, shell=True)
+    return subprocess.run(["make", "doctest"], cwd=abs_path, shell=IS_WIN)
 
 
 class Handler(http.server.SimpleHTTPRequestHandler):
