@@ -7,7 +7,7 @@ import subprocess
 import threading
 
 PORT = 8000
-DIRECTORY = "docs/build/html"
+DIRECTORY = "../docs/build/html"
 
 
 def run_server():
