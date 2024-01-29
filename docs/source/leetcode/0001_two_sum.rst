@@ -3,5 +3,5 @@
 0001 - Two Sum
 --------------
 
-.. automodule:: leetcode.q_0001_two_sum
+.. automodule:: src.leetcode.q_0001_two_sum
    :members:

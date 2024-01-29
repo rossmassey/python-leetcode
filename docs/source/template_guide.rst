@@ -49,3 +49,10 @@ Alternatively, using Chrome or Firefox dev tools:
 .. code-block:: none
 
     .leetcode.com	TRUE	/	TRUE	1703486435	LEETCODE_SESSION	<token_value>
+
+:Template Generator:
+
+.. automodule:: scripts.template_generator.template_generator
+
+
+

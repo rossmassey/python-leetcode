@@ -27,10 +27,12 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 # modules location
-sys.path.insert(0, os.path.abspath('../../src'))
+# sys.path.insert(0, os.path.abspath('../../src'))
+# sys.path.insert(0, os.path.abspath('../../scripts'))
+sys.path.insert(0, os.path.abspath('../../scripts/template_generator'))
 
 doctest_global_setup = '''
-from leetcode import *
+from src.leetcode import *
 '''
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
