@@ -12,7 +12,13 @@ def main():
     # cookies token for synced user code
     script_dir = os.path.dirname(__file__)
     cookie_path = os.path.join(script_dir, 'cookies.txt')
-    fetch_leetcode_problem.load_cookie(cookie_path)
+
+    try:
+        fetch_leetcode_problem.load_cookie(cookie_path)
+    except Exception as error:
+        print(f'{type(error)}: {error}')
+        print('No synced code will be available')
+
 
     # local db acts as lookup table for problem num -> title slug/question id
     if fetch_leetcode_problem.count_problems() == 0:
