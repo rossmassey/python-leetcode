@@ -6,6 +6,8 @@ Problem Listing
 
 Here problems are organzied by Neetcode's Roadmap:
 
+Solved problems are linked to their doc page.
+
 `https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
 
 
@@ -13,7 +15,7 @@ Arrays and Hashing
 ==================
 
 .. csv-table::
-   :widths: 5, 30
+   :widths: 3, 30
 
     "🟢", "0242 - Valid Anagram"
     "🟢", "0217 - Contains Duplicate"

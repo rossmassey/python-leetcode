@@ -15,6 +15,7 @@ Articles explaining the code in this repository.
    :maxdepth: 1
 
    neetcode
+   leetcode_classes
    folder_structure
    doc_overview
 
