@@ -9,7 +9,7 @@ This is the documentation for my `python-leetcode`_ repo.
 Articles
 ========
 
-This section has some articles explaining the code in this repository.
+Articles explaining the code in this repository.
 
 .. toctree::
    :maxdepth: 1
@@ -21,7 +21,7 @@ This section has some articles explaining the code in this repository.
 Scripts
 =======
 
-This section has documentation for the scripts in this repository.
+Documentation for the scripts in this repository.
 
 .. toctree::
    :maxdepth: 2

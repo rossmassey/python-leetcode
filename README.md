@@ -39,7 +39,7 @@ Not using at moment
 2. `index.html` can be found under `docs/build/html/`
 
 #### Documentation Webserver
-1. `python3 scripts/preview-docs.py`
+1. `python scripts/preview-docs.py`
 2. This will run a webserver at http://localhost:8000
 3. This also runs doctest
 

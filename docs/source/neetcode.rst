@@ -25,7 +25,7 @@ Arrays and Hashing
     "🟨", "0271 - Encode and Decode Strings"
     "🟨", "0128 - Longest Consecutive Sequence"
 
-:In Order:
+:All completed problems:
 
 .. toctree::
    :maxdepth: 1

@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 This script is used to preview the documentation locally
+
+Runs on port ``8000`` by default
 """
 import os
 import http.server
@@ -77,6 +79,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
 def main():
     """
     Main function for the script
+
+    Enter ``r`` to reload, and ``q`` to quit
     """
     # Initial build
     build_docs()

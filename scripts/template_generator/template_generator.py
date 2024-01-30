@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script to get problem info and synced user code from leetcode.
+Interactive script to get problem info and synced user code from leetcode.
 
 Automatically creates templates for problem and updates documentation.
 
