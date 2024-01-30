@@ -10,7 +10,7 @@ import sys
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Python Leetcode Solutions'
-copyright = '2023, Ross Massey'
+copyright = '2024, Ross Massey'
 author = 'Ross Massey'
 
 # -- General configuration ---------------------------------------------------
@@ -27,10 +27,16 @@ templates_path = ['_templates']
 exclude_patterns = []
 
 # modules location
-sys.path.insert(0, os.path.abspath('../../src'))
+sys.path.insert(0, os.path.abspath('../../'))
+
+# only show final name (x instead of src.x)
+add_module_names = False
+
+# do not sort alphabetically
+autodoc_member_order = 'bysource'
 
 doctest_global_setup = '''
-from leetcode import *
+from src.leetcode import *
 '''
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -41,7 +47,18 @@ html_static_path = ['_static']
 # add css
 html_css_files = ['css/custom.css']
 
+# -- Setup -------------------------------------------------------------------
+
+
+def skip(app, what, name, obj, would_skip, options):
+    """
+    Allows the __init__ method to be autodoc
+    """
+    if name == "__init__":
+        return False
+    return would_skip
+
 
 def setup(app):
     app.add_css_file('css/custom.css')
-
+    app.connect("autodoc-skip-member", skip)

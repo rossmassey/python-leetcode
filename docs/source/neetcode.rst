@@ -1,11 +1,21 @@
-Neetcode
-========
+.. _neetcode:
+
+***************
+Problem Listing
+***************
+
+Here problems are organzied by Neetcode's Roadmap:
+
+Solved problems are linked to their doc page.
+
+`https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
+
 
 Arrays and Hashing
-------------------
+==================
 
 .. csv-table::
-   :widths: 5, 30
+   :widths: 3, 30
 
     "🟢", "0242 - Valid Anagram"
     "🟢", "0217 - Contains Duplicate"
@@ -17,7 +27,7 @@ Arrays and Hashing
     "🟨", "0271 - Encode and Decode Strings"
     "🟨", "0128 - Longest Consecutive Sequence"
 
-:In Order:
+:All completed problems:
 
 .. toctree::
    :maxdepth: 1
