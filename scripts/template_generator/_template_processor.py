@@ -21,18 +21,18 @@ def process_templates(fields: dict):
 
     # write solution template
     solution_template = fill_template("question_template.txt", fields)
-    solution_file_name = f'q_{fields['num_padded']}_{fields['title_slug_underscore']}'
+    solution_file_name = f'q_{fields["num_padded"]}_{fields["title_slug_underscore"]}'
     solution_path = f'src/leetcode/{solution_file_name}.py'
     write_to_repo(solution_path, solution_template)
 
     # add src/leetcode/__init__ import
     package_init = f'src/leetcode/__init__.py'
-    import_stmt = f'from .{solution_file_name} import Solution{fields['num_padded']}'
+    import_stmt = f'from .{solution_file_name} import Solution{fields["num_padded"]}'
     append_line(package_init, import_stmt)
 
     # create doc automodule file
     doc_template = fill_template("doc_template.txt", fields)
-    doc_file_name = f'{fields['num_padded']}_{fields['title_slug_underscore']}'
+    doc_file_name = f'{fields["num_padded"]}_{fields["title_slug_underscore"]}'
     doc_path = f'docs/source/leetcode/{doc_file_name}.rst'
     write_to_repo(doc_path, doc_template)
 
@@ -42,8 +42,8 @@ def process_templates(fields: dict):
     append_line(toc_location, toc_entry)
 
     # update neetcode reference
-    entry = f'{fields['num_padded']} - {fields['title']}'
-    doc_ref = f':ref:`{fields['num_padded']}_{fields['title_slug_underscore']}`'
+    entry = f'{fields["num_padded"]} - {fields["title"]}'
+    doc_ref = f':ref:`{fields["num_padded"]}_{fields["title_slug_underscore"]}`'
     replace_line(toc_location, entry, doc_ref)
 
 

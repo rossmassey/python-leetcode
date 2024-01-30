@@ -18,13 +18,13 @@ def format_fields(fields: dict) -> dict:
     Returns:
         dict: formatted fields
     """
-    description = fields['description']
+    description = fields["description"]
     examples = _format_examples(fields)
-    constraints = _format_constraints(fields['constraints'])
-    params = _format_params(fields['func'])
+    constraints = _format_constraints(fields["constraints"])
+    params = _format_params(fields["func"])
 
-    if fields['code']:
-        synced_code = _format_code(fields['code'])
+    if fields["code"]:
+        synced_code = _format_code(fields["code"])
     else:
         synced_code = ''
 
@@ -74,20 +74,19 @@ def _format_examples(fields: dict) -> str:
     """
     formatted_examples = []
 
-    number = f'{int(fields['num']):04}'
+    number = f'{int(fields["num"]):04}'
     class_name = f'Solution{number}'
-    func_name = f'>>> {class_name}.{fields['func']['name']}'
-
-    for i, example in enumerate(fields['examples'], 1):
+    func_name = f'>>> {class_name}.{fields["func"]["name"]}'
+    for i, example in enumerate(fields["examples"], 1):
         formatted_example = f':Example {i}:\n\n'
-        formatted_example += f'{func_name}({example['input']})\n'
-        formatted_example += f'{example['output']}\n\n'
+        formatted_example += f'{func_name}({example["input"]})\n'
+        formatted_example += f'{example["output"]}\n\n'
 
-        if example['img']:
-            formatted_example += f'{example['img']}\n\n'
+        if example["img"]:
+            formatted_example += f'{example["img"]}\n\n'
 
-        if example['explanation']:
-            formatted_example += f'{example['explanation'].lstrip()}\n'
+        if example["explanation"]:
+            formatted_example += f'{example["explanation"].lstrip()}\n'
 
         formatted_examples.append(formatted_example)
 
@@ -119,7 +118,7 @@ def _format_params(func: dict) -> str:
     """
     formatted_params = []
 
-    for param, param_type in zip(func['params'], func['param_types']):
+    for param, param_type in zip(func["params"], func["param_types"]):
         if param == 'self':
             continue
 
