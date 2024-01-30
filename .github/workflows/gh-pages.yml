@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme
+          pip install sphinx sphinx_rtd_theme requests rossmassey.fetch_leetcode_problem
       - name: Sphinx build
         run: |
           cd docs
