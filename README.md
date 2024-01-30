@@ -47,6 +47,8 @@ Press `r` to re-build/re-test, and `q` to quit
 
 #### Published Documentation
 
+[![Deploy Documentation](https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml/badge.svg?branch=main)](https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml)
+
 The `gh-pages.yml` action builds and publishes the Sphinx docs to GitHub pages
 
 It is accessible at: https://rossmassey.github.io/python-leetcode/
