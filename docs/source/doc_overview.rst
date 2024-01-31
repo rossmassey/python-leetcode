@@ -9,13 +9,17 @@ How documentation is built
 
 Documentation is located under the ``docs/`` folder. It is built with `Sphinx`_.
 
-:Class docstring:
+.. note::
 
-* details problem information, overview, constraints, and examples
+    For the documentation on ``src/leetcode/`` solved problems:
 
-:Function docstring:
+    :Class docstring:
 
-* details function information, notes on which strategy was used, and the time/space complexity
+    * details problem information, overview, constraints, and examples
+
+    :Function docstring:
+
+    * details function information, notes on which strategy was used, and the time/space complexity
 
 Docstring Args/Returns format follows the `Google Style Guide`_.
 
