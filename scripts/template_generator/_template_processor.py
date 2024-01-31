@@ -60,7 +60,7 @@ def _add_template_fields(fields: dict) -> dict:
     num_padded = f'{int(fields["num"]):04}'
     title_slug_underscore = fields['slug'].replace('-', '_')
 
-    title_name = f"`#{fields['num']} - {fields['difficulty']} "
+    title_name = f"`{fields['difficulty']} "
     title_url = f"<https://leetcode.com/problems/{fields['slug']}/>`_"
     title_header = title_name + title_url
 
