@@ -16,18 +16,26 @@ author = 'Ross Massey'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
+# repo root location
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
+# docs source location
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
+
 extensions = [
     'sphinx.ext.autodoc',   # html generation from docstrings
     'sphinx.ext.viewcode',  # source code in documentation
-    'sphinx.ext.doctest',    # evaluate >>> expressions
-    'sphinx.ext.napoleon'
+    'sphinx.ext.doctest',   # evaluate >>> expressions
+    'sphinx.ext.napoleon',  # support google style docstring
 ]
+
+from components.line_directive import setup as line_directive_setup
 
 templates_path = ['_templates']
 exclude_patterns = []
 
-# modules location
-sys.path.insert(0, os.path.abspath('../../'))
+# sys.path.insert(0, os.path.abspath('../../'))
+# sys.path.insert(0, os.path.abspath('.'))
 
 # only show final name (x instead of src.x)
 add_module_names = False
@@ -62,3 +70,5 @@ def skip(app, what, name, obj, would_skip, options):
 def setup(app):
     app.add_css_file('css/custom.css')
     app.connect("autodoc-skip-member", skip)
+
+    line_directive_setup(app)

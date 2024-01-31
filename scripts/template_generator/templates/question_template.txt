@@ -11,6 +11,8 @@ class Solution{num_padded}:
 
 {description_section}
 
+------
+
 {examples_section}
     """
     @staticmethod
