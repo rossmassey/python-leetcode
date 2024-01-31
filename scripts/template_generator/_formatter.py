@@ -119,17 +119,18 @@ def _format_params(func: dict) -> str:
     formatted_params = []
 
     for param, param_type in zip(func["params"], func["param_types"]):
+        # don't need docstring for self
         if param == 'self':
             continue
 
-        formatted_params.append(f'{param}({param_type}): TODO')
+        formatted_params.append(f'{param} ({param_type}): TODO')
 
     return '\n'.join(formatted_params)
 
 
 def _format_code(code: str) -> str:
     """
-    Removes class/func signature
+    Removes first class/func signature
 
     Assume only implementing a single function
 
@@ -137,12 +138,31 @@ def _format_code(code: str) -> str:
         code (str): synced user code
 
     Returns:
-        str: user code without signatures (indented)
+        str: user code without first class/def signatures (indented)
     """
     code_body = []
+    got_first_class = False
+    got_first_def = False
+
     for line in code.split('\n'):
-        if 'def' in line or 'class' in line:
-            continue
+
+        # keep comments
+        if not line.startswith('#'):
+
+            # expect single solution class (already added to template)
+            if 'class' in line and not got_first_class:
+                got_first_class = True
+                continue
+
+            # expect problem function def (first one already added to template)
+            if 'def' in line and not got_first_def:
+                got_first_def = True
+                continue
+
+            # will need to be moved outside of code to top of file
+            if 'import' in line:
+                line = '# move to top of file:\n# ' + line
+
         code_body.append(line)
 
     return '\n'.join(code_body)
