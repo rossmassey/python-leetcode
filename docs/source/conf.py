@@ -34,11 +34,11 @@ from components.line_directive import setup as line_directive_setup
 templates_path = ['_templates']
 exclude_patterns = []
 
-# sys.path.insert(0, os.path.abspath('../../'))
-# sys.path.insert(0, os.path.abspath('.'))
-
 # only show final name (x instead of src.x)
 add_module_names = False
+
+# show line numbers in view source code
+viewcode_line_numbers = True
 
 # do not sort alphabetically
 autodoc_member_order = 'bysource'
