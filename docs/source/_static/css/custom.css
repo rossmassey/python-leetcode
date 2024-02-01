@@ -9,6 +9,7 @@ code.literal {
 /* Add extra space to scroll at bottom */
 div.wy-nav-content {
     padding-bottom: 500px;
+    max-width: 1000px;
 }
 
 /* hover effect */
@@ -27,6 +28,23 @@ a:hover {
 .wy-nav-content a {
     color: #3488c0 !important;
     font-weight: 900;
-
-
 }
+
+/*code styling*/
+.viewcode-block {
+    font-weight: 500;
+    font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
+    line-height: 120%;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+/*code styling*/
+.rst-content div[class^="highlight"] pre {
+    font-weight: 500;
+    font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
+    line-height: 120%;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
