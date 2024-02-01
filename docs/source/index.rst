@@ -11,8 +11,12 @@ It is meant to serve as an easy way to browse and review problems, with
 scripts that can pull submitted code and auto-fill problem info when new ones
 are completed to keep these docs updated.
 
-✏️ :doc:`neetcode`
-  Here is where the solved problems are listed and categorized
+.. toctree::
+   :maxdepth: 3
+   :caption: ✏️ Problems
+
+   neetcode
+
 
 How is this repo used
 ---------------------
@@ -22,14 +26,6 @@ How is this repo used
 #. Add additional information for problem such as running time and strategy
 #. Use ``preview_docs`` to make sure documentation correct and doctest pass
 #. Commit and push to GitHub
-
-.. toctree::
-   :maxdepth: 2
-   :caption: ✏️ Problems
-   :hidden:
-
-   neetcode
-   leetcode_classes
 
 .. toctree::
    :maxdepth: 1
@@ -42,10 +38,11 @@ How is this repo used
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: 🖥️ API
+   :caption: 🖥️ API Documentation
 
    template_generator_documentation
    preview_docs_documentation
+   leetcode_classes
 
 
 .. toctree::
