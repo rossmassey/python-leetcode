@@ -1,3 +1,5 @@
+/* Override some of the theme CSS styling */
+
 /* Change inline code formatting */
 code.literal {
     color: black !important;
@@ -17,6 +19,7 @@ a:hover {
     background-color: yellow;
     position: relative; /* Ensure the positioning context is set */
     box-shadow: 0px 2px 0px 0px currentColor;
+    font-weight: 900;
 }
 
 /* override purple visited color */
@@ -31,20 +34,17 @@ a:hover {
 }
 
 /*code styling*/
-.viewcode-block {
-    font-weight: 500;
-    font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
-    line-height: 120%;
-    font-size: 14px;
-    letter-spacing: 0.02em;
-}
-
-/*code styling*/
+.viewcode-block,
 .rst-content div[class^="highlight"] pre {
     font-weight: 500;
     font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
     line-height: 120%;
-    font-size: 14px;
+    font-size: 12px;
     letter-spacing: 0.02em;
+}
+
+/* sidebar sublisting links */
+.wy-menu-vertical li ul li a:hover {
+    font-weight: 900 !important;
 }
 
