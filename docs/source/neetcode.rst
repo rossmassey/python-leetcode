@@ -6,8 +6,9 @@ Problem Listing
 
 .. note::
 
-    These are organized by Neetcode's Roadmap, which is a list with
-    different categories of leetcode problems / progressions.
+    These are organized by **Neetcode's Roadmap**, which is a list with
+    different categories of leetcode problems / progressions. It is based
+    off the **Blind 75** list.
 
     `https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
 
@@ -59,7 +60,7 @@ Stack
 .. csv-table::
    :widths: 5, 30
 
-    "🟢", "0020 - Valid Parentheses"
+    "🟢", ":ref:`0020_valid_parentheses`"
     "🟨", "0155 - Min Stack"
     "🟨", "0150 - Evaluate Reverse Polish 6Notation"
     "🟨", "0022 - Generate Parentheses"
@@ -71,3 +72,4 @@ Stack
    :maxdepth: 1
    :hidden:
 
+   leetcode/0020_valid_parentheses
