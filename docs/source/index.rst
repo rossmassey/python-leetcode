@@ -1,3 +1,8 @@
+.. this is the index page of the sphinx documentation
+..
+.. the toctree directives are used to import other .rst files
+.. they can be hidden to only display in sidebar
+
 #########################
 Python Leetcode Solutions
 #########################
@@ -26,6 +31,7 @@ How is this repo used
 #. Add additional information for problem such as running time and strategy
 #. Use ``preview_docs`` to make sure documentation correct and doctest pass
 #. Commit and push to GitHub
+
 
 .. toctree::
    :maxdepth: 1

@@ -10,3 +10,23 @@ code.literal {
 div.wy-nav-content {
     padding-bottom: 500px;
 }
+
+/* hover effect */
+a:hover {
+    background-color: yellow;
+    position: relative; /* Ensure the positioning context is set */
+    box-shadow: 0px 2px 0px 0px currentColor;
+}
+
+/* override purple visited color */
+.wy-nav-content a:visited {
+    color: inherit;
+}
+
+/*link style */
+.wy-nav-content a {
+    color: #3488c0 !important;
+    font-weight: 900;
+
+
+}
