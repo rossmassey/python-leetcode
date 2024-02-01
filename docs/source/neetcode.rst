@@ -6,6 +6,9 @@ Problem Listing
 
 Here problems are organzied by Neetcode's Roadmap:
 
+It is the Blind 75 list + 75 others, a list meant to represent different
+categories of leetcode problems with progressions.
+
 Solved problems are linked to their doc page.
 
 `https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
@@ -27,9 +30,22 @@ Arrays and Hashing
     "🟨", "0271 - Encode and Decode Strings"
     "🟨", "0128 - Longest Consecutive Sequence"
 
-:All completed problems:
+Two Pointers
+============
+
+.. csv-table::
+   :widths: 5, 30
+
+    "🟢", "0125 - Valid Palindrome"
+    "🟨", "0167 - Two Sum II Input Array Is Sorted"
+    "🟨", "0015 - Sum"
+    "🟨", "0011 - Container With Most Water"
+    "🔴", "0042 - Trapping Rain Water"
 
 .. toctree::
    :maxdepth: 1
+   :hidden:
 
    leetcode/0001_two_sum
+   leetcode/0217_contains_duplicate
+   leetcode/0242_valid_anagram
