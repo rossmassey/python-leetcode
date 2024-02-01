@@ -40,42 +40,52 @@ docs/source/
 
 This is where the Sphinx ``.rst`` and configuration files are.
 
-``_static/`` contains custom ``.css`` file, ``leetcode/`` is used for the
-automodule ``.rst`` files, and ``conf.py`` is where the Sphinx configuration
-and metadata is.
+:🎨 _static/css/custom.css:
+    custom CSS styles for this documentation
+
+:⚙️ conf.py:
+    where the Sphinx configuration and metadata is.
+
+:📁 leetcode/:
+    used for the automodule ``.rst`` files (imports to create documentation)
+
+See :ref:`documentation-guide` for more info
 
 requirements.txt
 ================
 
 This lists the dependencies of this repo to be installed by pip.
 
-It is recommended to isolate your environment using a tool like ``venv``.
+.. warning::
+    It is recommended to isolate your environment using a tool like ``venv``
 
 scripts/
 ========
 
 This is where scripts for managing this repo are.
 
-``preview_docs.py`` will start a local server for previewing the Sphinx docs.
+:✍️ template_generator/:
+    will auto create solution and doc files for a given problem by fetching
+    info from leetcode
 
-``template_generator/`` package will auto create solution and doc files for a
-given problem.
+:🔍 preview_docs.py:
+    will start a local server for previewing the Sphinx docs.
 
 src/
 ====
 
-This is where the solved leetcode problems are, as well as leetcode provided
-classes (such as ``ListNode``).
+This is where the solved problems are
 
-Each problem is in a file named ``q_num_title.py``, and contains
-related problem info and doctest examples. They are contained in a ``class``
-matching leetcode, but named ``Solution<num>`` instead of ``Solution``.
+:📁 common/:
+    modules with common leetcode classes shared among problems
 
-Docstrings are used in the Sphinx doc, which also evaluates doctest (``>>>``)
-and reports results.
+:📁 leetcode/:
+    modules containing solution classes/functions
 
-tests/
-======
+See :ref:`format` for more info
+
+tests/ (``Deprecated``)
+=======================
 
 This is where unittests for the solved leetcode problems are.
 
