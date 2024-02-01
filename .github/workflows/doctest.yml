@@ -1,4 +1,4 @@
-name: Run Doctest and Upload Output
+name: Doctest
 
 on:
   push:
@@ -29,7 +29,7 @@ jobs:
         run: |
           pip install sphinx sphinx_rtd_theme requests rossmassey.fetch_leetcode_problem
 
-      - name: Run Sphinx doctest
+      - name: Doctest
         run: |
           cd docs
           make doctest
