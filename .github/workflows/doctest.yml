@@ -1,0 +1,41 @@
+name: Run Doctest and Upload Output
+
+on:
+  push:
+    branches: ["main"]
+  # allow manual trigger
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+# only one concurrent deployment
+concurrency:
+  group: "doctest"
+  cancel-in-progress: true
+
+jobs:
+  doctest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - uses: actions/setup-python@v3
+
+      - name: Install dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme requests rossmassey.fetch_leetcode_problem
+
+      - name: Run Sphinx doctest
+        run: |
+          cd docs
+          make doctest
+
+      - name: Upload doctest output
+        uses: actions/upload-artifact@v3
+        with:
+          name: doctest-output
+          path: docs/build/doctest/output.txt
