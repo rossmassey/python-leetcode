@@ -10,11 +10,7 @@ Python Leetcode Solutions
 .. _python-leetcode: https://github.com/rossmassey/python-leetcode
 .. _leetcode: https://leetcode.com/
 
-This is the documentation page for my `python-leetcode`_ repo.
-
-It is meant to serve as an easy way to browse and review problems, with
-scripts that can pull submitted code and auto-fill problem info when new ones
-are completed to keep these docs updated.
+*WELCOME* to the documentation page for `python-leetcode`_ repo.
 
 .. toctree::
    :maxdepth: 3
@@ -22,12 +18,21 @@ are completed to keep these docs updated.
 
    neetcode
 
+:☑️ Tests:
+    .. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml/badge.svg
+        :target: https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml
 
-How is this repo used
----------------------
+:☑️ Documentation:
+    .. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml/badge.svg
+        :target: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml
+
+
+
+How repo is used
+----------------
 
 #. Start or complete a new problem on `leetcode`_
-#. Run ``template_generator`` with problem ``num`` to create all the necessary repo files
+#. Run ``template_generator`` with problem ``num`` to create all the repo files
 #. Add additional information for problem such as running time and strategy
 #. Use ``preview_docs`` to make sure documentation correct and doctest pass
 #. Commit and push to GitHub
@@ -39,7 +44,9 @@ How is this repo used
    :hidden:
 
    folder_structure
+   testing
    doc_overview
+   problem_format
 
 .. toctree::
    :maxdepth: 2

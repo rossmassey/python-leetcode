@@ -51,46 +51,13 @@ documentation, as well as evaluates the doctest.
 
 It will start a web server that can accessed at http://localhost:8000
 
-Writing Problem Docs
-====================
+GitHub Action
+-------------
 
-Auto
-----
+.. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml/badge.svg
+    :target: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml
 
-``scripts/template_generator/main.py`` generates docstring for new problems.
+The ``.github/workflows/gh-pages.yml`` action will run build these docs and
+publish them to GitHub pages. It can also ran by clicking **Run workflow**
+within GitHub.
 
-It also
-
-    * creates ``docs/source/leetocode/XXXX_problem.rst`` for ``automodule``
-    * updates ``docs/source/neetcode.rst`` references
-
-See :ref:`Template Generator Documentation <template-generator-doc>` for more
-information.
-
-Manual
-------
-
-#. Follow the format of ``q_0001_two_sum`` for docstring and module comment.
-#. Create ``docs/source/leetcode/xxxx_problem.rst`` with following content:
-
-    .. code-block:: rst
-
-        .. _XXXX_problem:
-
-        Problem
-        -------
-
-        .. automodule:: leetcode.q_xxxx_problem
-           :members:
-
-#. Replace ``XXXX - Title`` with ``:ref:`_XXXX_problem``` in ``neetcode.rst``
-#. Add import to the ``toctree`` directive at the bottom of ``neetcode.rst``.
-
-   .. code-block:: rst
-
-        :In Order:
-
-        .. toctree::
-           :maxdepth: 1
-
-           leetcode/XXXX_problem  <- add

@@ -25,14 +25,19 @@ See documentation for how to use
 ## Testing
 
 #### Doctest
+
+[![Doctest](https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml/badge.svg)](https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml)
+
+The ``doctest.yml`` action runs doctest and publishes the 
+``output.txt`` artifact
+
+Doctest can be manually ran with: 
 1. `cd docs && make doctest`
 
-#### Run Unit Tests (deprecated)
+#### Run Unit Tests (not using at the moment)
 1. `python3 -m unittest`
 
 `unittest` comes with python
-
-Not using at moment
 
 ## Sphinx Documentation
 
