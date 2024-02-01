@@ -4,15 +4,12 @@
 Problem Listing
 ***************
 
-Here problems are organzied by Neetcode's Roadmap:
+.. note::
 
-It is the Blind 75 list + 75 others, a list meant to represent different
-categories of leetcode problems with progressions.
+    These are organized by Neetcode's Roadmap, which is a list with
+    different categories of leetcode problems / progressions.
 
-Solved problems are linked to their doc page.
-
-`https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
-
+    `https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
 
 Arrays and Hashing
 ==================
@@ -48,10 +45,29 @@ Two Pointers
     "🟨", "0167 - Two Sum II Input Array Is Sorted"
     "🟨", "0015 - Sum"
     "🟨", "0011 - Container With Most Water"
-    "🔴", "0042 - Trapping Rain Water"
+    "🔺", "0042 - Trapping Rain Water"
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
    leetcode/0125_valid_palindrome
+
+Stack
+=====
+
+.. csv-table::
+   :widths: 5, 30
+
+    "🟢", "0020 - Valid Parentheses"
+    "🟨", "0155 - Min Stack"
+    "🟨", "0150 - Evaluate Reverse Polish 6Notation"
+    "🟨", "0022 - Generate Parentheses"
+    "🟨", "0739 - Daily Temperatures"
+    "🟨", "0853 - Car Fleet"
+    "🔺", "0084 - Largest Rectangle In Histogram"
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
