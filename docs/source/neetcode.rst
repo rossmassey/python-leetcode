@@ -12,6 +12,14 @@ Problem Listing
 
     `https://neetcode.io/roadmap <https://neetcode.io/roadmap>`_
 
+.. code-block:: none
+
+    🟢 - Easy
+
+    🟨 - Medium
+
+    🔺 - Hard
+
 Arrays and Hashing
 ==================
 
