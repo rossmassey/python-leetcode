@@ -38,7 +38,9 @@ it up.
 docs/source/
 ============
 
-This is where the Sphinx ``.rst`` and configuration files are.
+.. _reStructuredText: https://docutils.sourceforge.io/rst.html
+
+This is where the Sphinx `reStructuredText`_ and configuration files are.
 
 :🎨 _static/css/custom.css:
     custom CSS styles for this documentation
@@ -48,6 +50,9 @@ This is where the Sphinx ``.rst`` and configuration files are.
 
 :📁 leetcode/:
     used for the automodule ``.rst`` files (imports to create documentation)
+
+:📄 *.rst:
+    these are articles containing ``toctree`` directives and information
 
 See :ref:`documentation-guide` for more info
 

@@ -9,7 +9,8 @@ This describes how the solved problem files are organized
 :Filename:
     ``src/leetcode/q_XXXX_problem.py``
 
-The class docstring contains information from leetcode
+The ``class`` docstring contains information from leetcode. Each problem
+is namespaced under ``SolutionXXXX`` where ``XXXX`` is the number (zero padded).
 
 .. code-block:: python
 
@@ -31,8 +32,19 @@ The class docstring contains information from leetcode
 
         """
 
-The function (def) docstring contains information about the function used to
+The ``def`` (function) docstring contains information about the function used to
 solve the problem, and how it was solved.
+
+.. note::
+
+    It is made a ``@staticmethod`` so that it can be called without
+    instantiating an object in the doctest examples.
+
+    .. code-block:: python
+
+        >>> SolutionXXXX.statically_defined_method(input)
+        output
+
 
 .. code-block:: python
 
@@ -58,10 +70,6 @@ solve the problem, and how it was solved.
 
             """
             pass
-
-It is a `@staticmethod` so that it can be called as  ``SolutionXXXX.problem``
-
-Helper functions will also need to be called in that manner.
 
 
 Creating Repo Files

@@ -7,27 +7,34 @@ How documentation is built
 .. _Sphinx: https://www.sphinx-doc.org/en/master/
 .. _Google Style Guide: https://google.github.io/styleguide/pyguide.html#383-functions-and-methods
 
-Documentation is located under the ``docs/`` folder. It is built with `Sphinx`_.
+Documentation is located under the ``docs/source/`` folder. It is built with `Sphinx`_.
 
 .. note::
 
-    For the documentation on ``src/leetcode/`` solved problems:
+    For the docstrings on ``src/leetcode/`` solved problems:
 
     :Class docstring:
 
-    * details problem information, overview, constraints, and examples
+        * problem title
+        * description
+        * overview
+        * constraints
+        * examples
 
     :Function docstring:
 
-    * details function information, notes on which strategy was used, and the time/space complexity
+        * function information
+        * time/space complexity
+        * notes on which strategy was used
 
 Docstring Args/Returns format follows the `Google Style Guide`_.
 
 Doctest
 =======
 
-Doctest are testable ``>>>`` examples in the docstring. Compares the output of
-the ``>>>`` line with the line below it.
+Doctest are testable ``>>>`` examples in the docstring.
+
+See :ref:`testing`
 
 Doc Configuration
 =================
