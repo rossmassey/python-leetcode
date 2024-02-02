@@ -10,13 +10,14 @@ Python Leetcode Solutions
 .. _python-leetcode: https://github.com/rossmassey/python-leetcode
 .. _leetcode: https://leetcode.com/
 
-*WELCOME* to the documentation page for `python-leetcode`_ repo.
+*WELCOME* to the documentation page for the solved problmes in `python-leetcode`_ repo.
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: ✏️ Problems
 
    neetcode
+   leetcode_classes
 
 :☑️ Tests:
     .. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml/badge.svg
@@ -51,11 +52,11 @@ How repo is used
 .. toctree::
    :maxdepth: 2
    :hidden:
-   :caption: 🖥️ API Documentation
+   :caption: 🖥️ Scripts Documentation
 
    template_generator_documentation
    preview_docs_documentation
-   leetcode_classes
+
 
 
 .. toctree::
