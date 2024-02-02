@@ -19,7 +19,7 @@ Automatically creates templates for problem and updates documentation.
 This expects ``cookies.txt`` to be in same directory
 
 See `here <https://rossmassey.github.io/fetch-leetcode-problem/cookies.html>`_
-for usage on ``cookies.txt`` and `here <https://rossmassey.github.io/fetch-leetcode-problem/database.html>`_
+for usage on ``cookies.txt`` and `this article <https://rossmassey.github.io/fetch-leetcode-problem/database.html>`_
 for updating problem listing
 """
 import os

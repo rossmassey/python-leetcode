@@ -51,7 +51,7 @@ This is where the Sphinx `reStructuredText`_ and configuration files are.
 :📁 leetcode/:
     used for the automodule ``.rst`` files (imports to create documentation)
 
-:📄 *.rst:
+:📄 \*.rst:
     these are articles containing ``toctree`` directives and information
 
 See :ref:`documentation-guide` for more info
