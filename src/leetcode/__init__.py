@@ -3,3 +3,4 @@ from .q_0242_valid_anagram import Solution0242
 from .q_0217_contains_duplicate import Solution0217
 from .q_0125_valid_palindrome import Solution0125
 from .q_0020_valid_parentheses import Solution0020
+from .q_0049_group_anagrams import Solution0049
