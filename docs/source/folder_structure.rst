@@ -12,8 +12,8 @@ Repo Structure
     │   └── source/                     # sphinx doc source
     │       ├── _static/
     │       ├── _leetcode/
-    |       ├── conf.py
-    |       └── ...
+    │       ├── conf.py
+    │       └── ...
     ├── requirements.txt
     ├── scripts/                        # useful scripts
     │   ├── preview_docs.py

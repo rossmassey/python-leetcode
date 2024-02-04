@@ -52,7 +52,7 @@ Two Pointers
    :widths: 5, 30
 
     "🟢", ":ref:`0125_valid_palindrome`"
-    "🟨", "0167 - Two Sum II Input Array Is Sorted"
+    "🟨", ":ref:`0167_two_sum_ii_input_array_is_sorted`"
     "🟨", "0015 - Sum"
     "🟨", "0011 - Container With Most Water"
     "🔺", "0042 - Trapping Rain Water"
@@ -62,6 +62,7 @@ Two Pointers
    :hidden:
 
    leetcode/0125_valid_palindrome
+   leetcode/0167_two_sum_ii_input_array_is_sorted
 
 Stack
 =====
@@ -82,4 +83,3 @@ Stack
    :hidden:
 
    leetcode/0020_valid_parentheses
-
