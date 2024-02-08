@@ -5,3 +5,4 @@ from .q_0125_valid_palindrome import Solution0125
 from .q_0167_two_sum_ii_input_array_is_sorted import Solution0167
 from .q_0217_contains_duplicate import Solution0217
 from .q_0242_valid_anagram import Solution0242
+from .q_0347_top_k_frequent_elements import Solution0347
