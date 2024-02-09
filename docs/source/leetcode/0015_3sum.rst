@@ -1,0 +1,7 @@
+.. _0015_3sum:
+
+0015 - 3Sum
+-----------
+
+.. automodule:: src.leetcode.q_0015_3sum
+   :members:

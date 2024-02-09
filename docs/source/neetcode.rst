@@ -54,7 +54,7 @@ Two Pointers
 
     "🟢", ":ref:`0125_valid_palindrome`"
     "🟨", ":ref:`0167_two_sum_ii_input_array_is_sorted`"
-    "🟨", "0015 - Sum"
+    "🟨", ":ref:`0015_3sum`"
     "🟨", "0011 - Container With Most Water"
     "🔺", "0042 - Trapping Rain Water"
 
@@ -64,6 +64,7 @@ Two Pointers
 
    leetcode/0125_valid_palindrome
    leetcode/0167_two_sum_ii_input_array_is_sorted
+   leetcode/0015_3sum
 
 Stack
 =====
