@@ -73,7 +73,7 @@ Stack
    :widths: 5, 30
 
     "🟢", ":ref:`0020_valid_parentheses`"
-    "🟨", "0155 - Min Stack"
+    "🟨", ":ref:`0155_min_stack`"
     "🟨", "0150 - Evaluate Reverse Polish 6Notation"
     "🟨", "0022 - Generate Parentheses"
     "🟨", "0739 - Daily Temperatures"
@@ -85,3 +85,4 @@ Stack
    :hidden:
 
    leetcode/0020_valid_parentheses
+   leetcode/0155_min_stack
