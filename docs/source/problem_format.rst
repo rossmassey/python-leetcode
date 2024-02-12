@@ -61,8 +61,8 @@ solve the problem, and how it was solved.
 
             ------
 
-            :Runtime:   ``O(x)``
-            :Space:     ``O(x)``
+            :Runtime:   ``O(x)``    <- Big-O runtime complexity
+            :Space:     ``O(x)``    <- Extra space complexity, not including i/o
 
             :Strategy:
 
