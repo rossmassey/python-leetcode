@@ -1,7 +1,7 @@
 class Solution0155:
     """
     `Medium <https://leetcode.com/problems/min-stack/>`_
-    ------------------------------------------------------
+    ----------------------------------------------------
 
     .. sidebar:: Constraints
 
