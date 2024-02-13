@@ -75,7 +75,7 @@ Stack
 
     "🟢", ":ref:`0020_valid_parentheses`"
     "🟨", ":ref:`0155_min_stack`"
-    "🟨", "0150 - Evaluate Reverse Polish 6Notation"
+    "🟨", ":ref:`0150_evaluate_reverse_polish_notation`"
     "🟨", "0022 - Generate Parentheses"
     "🟨", "0739 - Daily Temperatures"
     "🟨", "0853 - Car Fleet"
@@ -87,3 +87,4 @@ Stack
 
    leetcode/0020_valid_parentheses
    leetcode/0155_min_stack
+   leetcode/0150_evaluate_reverse_polish_notation

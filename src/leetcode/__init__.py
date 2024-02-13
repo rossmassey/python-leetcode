@@ -9,3 +9,4 @@ from .q_0347_top_k_frequent_elements import Solution0347
 from .q_0015_3sum import Solution0015
 from .q_0155_min_stack import Solution0155
 from .q_0238_product_of_array_except_self import Solution0238
+from .q_0150_evaluate_reverse_polish_notation import Solution0150
