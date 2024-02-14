@@ -32,7 +32,7 @@ Arrays and Hashing
     "🟨", ":ref:`0049_group_anagrams`"
     "🟨", ":ref:`0347_top_k_frequent_elements`"
     "🟨", ":ref:`0238_product_of_array_except_self`"
-    "🟨", "0036 - Valid Sudoku"
+    "🟨", ":ref:`0036_valid_sudoku`"
     "🟨", "0271 - Encode and Decode Strings"
     "🟨", "0128 - Longest Consecutive Sequence"
 
@@ -46,6 +46,7 @@ Arrays and Hashing
    leetcode/0049_group_anagrams
    leetcode/0347_top_k_frequent_elements
    leetcode/0238_product_of_array_except_self
+   leetcode/0036_valid_sudoku
 
 Two Pointers
 ============
