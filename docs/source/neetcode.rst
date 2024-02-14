@@ -34,7 +34,7 @@ Arrays and Hashing
     "🟨", ":ref:`0238_product_of_array_except_self`"
     "🟨", ":ref:`0036_valid_sudoku`"
     "🟨", ":ref:`0271_encode_and_decode_strings`"
-    "🟨", "0128 - Longest Consecutive Sequence"
+    "🟨", ":ref:`0128_longest_consecutive_sequence`"
 
 .. toctree::
    :maxdepth: 1
@@ -48,6 +48,7 @@ Arrays and Hashing
    leetcode/0238_product_of_array_except_self
    leetcode/0036_valid_sudoku
    leetcode/0271_encode_and_decode_strings
+   leetcode/0128_longest_consecutive_sequence
 
 Two Pointers
 ============
