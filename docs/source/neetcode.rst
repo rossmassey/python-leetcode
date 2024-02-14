@@ -33,7 +33,7 @@ Arrays and Hashing
     "🟨", ":ref:`0347_top_k_frequent_elements`"
     "🟨", ":ref:`0238_product_of_array_except_self`"
     "🟨", ":ref:`0036_valid_sudoku`"
-    "🟨", "0271 - Encode and Decode Strings"
+    "🟨", ":ref:`0271_encode_and_decode_strings`"
     "🟨", "0128 - Longest Consecutive Sequence"
 
 .. toctree::
@@ -47,6 +47,7 @@ Arrays and Hashing
    leetcode/0347_top_k_frequent_elements
    leetcode/0238_product_of_array_except_self
    leetcode/0036_valid_sudoku
+   leetcode/0271_encode_and_decode_strings
 
 Two Pointers
 ============
