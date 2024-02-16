@@ -48,6 +48,7 @@ How repo is used
    testing
    doc_overview
    problem_format
+   complexity
 
 .. toctree::
    :maxdepth: 2
