@@ -80,7 +80,7 @@ Stack
     "🟢", ":ref:`0020_valid_parentheses`"
     "🟨", ":ref:`0155_min_stack`"
     "🟨", ":ref:`0150_evaluate_reverse_polish_notation`"
-    "🟨", "0022 - Generate Parentheses"
+    "🟨", ":ref:`0022_generate_parentheses`"
     "🟨", "0739 - Daily Temperatures"
     "🟨", "0853 - Car Fleet"
     "🔺", "0084 - Largest Rectangle In Histogram"
@@ -92,3 +92,4 @@ Stack
    leetcode/0020_valid_parentheses
    leetcode/0155_min_stack
    leetcode/0150_evaluate_reverse_polish_notation
+   leetcode/0022_generate_parentheses

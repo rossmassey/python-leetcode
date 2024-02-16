@@ -14,3 +14,4 @@ from .q_0036_valid_sudoku import Solution0036
 from .q_0271_encode_and_decode_strings import Solution0271
 from .q_0128_longest_consecutive_sequence import Solution0128
 from .q_0011_container_with_most_water import Solution0011
+from .q_0022_generate_parentheses import Solution0022
