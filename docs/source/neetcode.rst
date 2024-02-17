@@ -60,7 +60,7 @@ Two Pointers
     "🟨", ":ref:`0167_two_sum_ii_input_array_is_sorted`"
     "🟨", ":ref:`0015_3sum`"
     "🟨", ":ref:`0011_container_with_most_water`"
-    "🔺", "0042 - Trapping Rain Water"
+    "🔺", ":ref:`0042_trapping_rain_water`"
 
 .. toctree::
    :maxdepth: 1
@@ -70,6 +70,7 @@ Two Pointers
    leetcode/0167_two_sum_ii_input_array_is_sorted
    leetcode/0015_3sum
    leetcode/0011_container_with_most_water
+   leetcode/0042_trapping_rain_water
 
 Stack
 =====
