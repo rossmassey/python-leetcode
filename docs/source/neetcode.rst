@@ -81,7 +81,7 @@ Stack
     "🟨", ":ref:`0155_min_stack`"
     "🟨", ":ref:`0150_evaluate_reverse_polish_notation`"
     "🟨", ":ref:`0022_generate_parentheses`"
-    "🟨", "0739 - Daily Temperatures"
+    "🟨", ":ref:`0739_daily_temperatures`"
     "🟨", "0853 - Car Fleet"
     "🔺", "0084 - Largest Rectangle In Histogram"
 
@@ -93,3 +93,4 @@ Stack
    leetcode/0155_min_stack
    leetcode/0150_evaluate_reverse_polish_notation
    leetcode/0022_generate_parentheses
+   leetcode/0739_daily_temperatures
