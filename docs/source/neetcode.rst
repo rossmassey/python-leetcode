@@ -84,7 +84,7 @@ Stack
     "🟨", ":ref:`0022_generate_parentheses`"
     "🟨", ":ref:`0739_daily_temperatures`"
     "🟨", ":ref:`0853_car_fleet`"
-    "🔺", "0084 - Largest Rectangle In Histogram"
+    "🔺", ":ref:`0084_largest_rectangle_in_histogram`"
 
 .. toctree::
    :maxdepth: 1
@@ -96,3 +96,4 @@ Stack
    leetcode/0022_generate_parentheses
    leetcode/0739_daily_temperatures
    leetcode/0853_car_fleet
+   leetcode/0084_largest_rectangle_in_histogram
