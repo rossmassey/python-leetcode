@@ -54,7 +54,7 @@ Two Pointers
 ============
 
 .. csv-table::
-   :widths: 5, 30
+   :widths: 3, 30
 
     "🟢", ":ref:`0125_valid_palindrome`"
     "🟨", ":ref:`0167_two_sum_ii_input_array_is_sorted`"
@@ -76,7 +76,7 @@ Stack
 =====
 
 .. csv-table::
-   :widths: 5, 30
+   :widths: 3, 30
 
     "🟢", ":ref:`0020_valid_parentheses`"
     "🟨", ":ref:`0155_min_stack`"
@@ -104,7 +104,7 @@ Binary Search
 .. csv-table::
    :widths: 3, 30
 
-    "🟢", "0704 - Binary Search"
+    "🟢", ":ref:`0704_binary_search`"
     "🟨", "0074 - Search a 2D Matrix"
     "🟨", "0875 - Koko Eating Bananas"
     "🟨", "0153 - Find Minimum in Rotated Sorted Array"
@@ -112,18 +112,30 @@ Binary Search
     "🟨", "0981 - Time Based Key-Value Store"
     "🔺", "0004 - Median of Two Sorted Arrays"
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   leetcode/0704_binary_search
+
 Sliding Window
 ==============
 
 .. csv-table::
    :widths: 3, 30
 
-    "🟢", "0121 - Best Time to Buy And Sell Stock"
+    "🟢", ":ref:`0121_best_time_to_buy_and_sell_stock`"
     "🟨", "0003 - Longest Substring Without Repeating Characters"
     "🟨", "0424 - Longest Repeating Character Replacement"
     "🟨", "0567 - Permutation In String"
     "🔺", "0076 - Minimum Window Substring"
     "🔺", "0239 - Sliding Window Maximum"
+
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   leetcode/0121_best_time_to_buy_and_sell_stock
 
 Linked List
 ===========
@@ -131,7 +143,7 @@ Linked List
 .. csv-table::
    :widths: 3, 30
 
-    "🟢", "0206 - Reverse Linked List"
+    "🟢", ":ref:`0206_reverse_linked_list`"
     "🟢", "0021 - Merge Two Sorted Lists"
     "🟢", "0141 - Linked List Cycle"
     "🟨", "0143 - Reorder List"
@@ -143,3 +155,8 @@ Linked List
     "🔺", "0023 - Merge K Sorted Lists"
     "🔺", "0025 - Reverse Nodes In K Group"
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   leetcode/0206_reverse_linked_list

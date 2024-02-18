@@ -45,6 +45,7 @@ autodoc_member_order = 'bysource'
 
 doctest_global_setup = '''
 from src.leetcode import *
+from src.common import *
 '''
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
