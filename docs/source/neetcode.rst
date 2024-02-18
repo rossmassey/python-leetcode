@@ -97,3 +97,49 @@ Stack
    leetcode/0739_daily_temperatures
    leetcode/0853_car_fleet
    leetcode/0084_largest_rectangle_in_histogram
+
+Binary Search
+=============
+
+.. csv-table::
+   :widths: 3, 30
+
+    "🟢", "0704 - Binary Search"
+    "🟨", "0074 - Search a 2D Matrix"
+    "🟨", "0875 - Koko Eating Bananas"
+    "🟨", "0153 - Find Minimum in Rotated Sorted Array"
+    "🟨", "0033 - Search in Rotated Sorted Array"
+    "🟨", "0981 - Time Based Key-Value Store"
+    "🔺", "0004 - Median of Two Sorted Arrays"
+
+Sliding Window
+==============
+
+.. csv-table::
+   :widths: 3, 30
+
+    "🟢", "0121 - Best Time to Buy And Sell Stock"
+    "🟨", "0003 - Longest Substring Without Repeating Characters"
+    "🟨", "0424 - Longest Repeating Character Replacement"
+    "🟨", "0567 - Permutation In String"
+    "🔺", "0076 - Minimum Window Substring"
+    "🔺", "0239 - Sliding Window Maximum"
+
+Linked List
+===========
+
+.. csv-table::
+   :widths: 3, 30
+
+    "🟢", "0206 - Reverse Linked List"
+    "🟢", "0021 - Merge Two Sorted Lists"
+    "🟢", "0141 - Linked List Cycle"
+    "🟨", "0143 - Reorder List"
+    "🟨", "0019 - Remove Nth Node From End of List"
+    "🟨", "0138 - Copy List With Random Pointer"
+    "🟨", "0002 - Add Two Numbers"
+    "🟨", "0287 - Find The Duplicate Number"
+    "🟨", "0146 - LRU Cache"
+    "🔺", "0023 - Merge K Sorted Lists"
+    "🔺", "0025 - Reverse Nodes In K Group"
+

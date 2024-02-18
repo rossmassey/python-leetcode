@@ -10,7 +10,7 @@ Python Leetcode Solutions
 .. _python-leetcode: https://github.com/rossmassey/python-leetcode
 .. _leetcode: https://leetcode.com/
 
-*WELCOME* to the documentation page for the solved problmes in `python-leetcode`_ repo.
+*WELCOME* to the documentation page for the solved problems in `python-leetcode`_ repo.
 
 .. toctree::
    :maxdepth: 2
