@@ -54,10 +54,11 @@ class Solution0074:
         :Strategy:
 
             treat the 2D array as a 1D array
+        
+            :math:`\\text{row_index}=\\text{index}\\div\\text{cols}` (how many fit in a
+            row)
 
-            row is index divided by number of columns (how many fit in a row)
-
-            col is index modulo number of columns
+            :math:`\\text{col_index}=\\text{index}\\pmod{\\text{cols}}`
 
         """
         rows = len(matrix)

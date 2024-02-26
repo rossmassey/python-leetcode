@@ -27,6 +27,7 @@ extensions = [
     'sphinx.ext.viewcode',  # source code in documentation
     'sphinx.ext.doctest',   # evaluate >>> expressions
     'sphinx.ext.napoleon',  # support google style docstring
+    'sphinx.ext.mathjax',   # LaTeX support
 ]
 
 from components.line_directive import setup as line_directive_setup
