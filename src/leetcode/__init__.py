@@ -6,6 +6,7 @@ from .q_0022_generate_parentheses import Solution0022
 from .q_0036_valid_sudoku import Solution0036
 from .q_0042_trapping_rain_water import Solution0042
 from .q_0049_group_anagrams import Solution0049
+from .q_0074_search_a_2d_matrix import Solution0074
 from .q_0084_largest_rectangle_in_histogram import Solution0084
 from .q_0125_valid_palindrome import Solution0125
 from .q_0121_best_time_to_buy_and_sell_stock import Solution0121

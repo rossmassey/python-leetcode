@@ -105,7 +105,7 @@ Binary Search
    :widths: 3, 30
 
     "🟢", ":ref:`0704_binary_search`"
-    "🟨", "0074 - Search a 2D Matrix"
+    "🟨", ":ref:`0074_search_a_2d_matrix`"
     "🟨", "0875 - Koko Eating Bananas"
     "🟨", "0153 - Find Minimum in Rotated Sorted Array"
     "🟨", "0033 - Search in Rotated Sorted Array"
@@ -117,6 +117,7 @@ Binary Search
    :hidden:
 
    leetcode/0704_binary_search
+   leetcode/0074_search_a_2d_matrix
 
 Sliding Window
 ==============
