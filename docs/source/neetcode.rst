@@ -106,7 +106,7 @@ Binary Search
 
     "🟢", ":ref:`0704_binary_search`"
     "🟨", ":ref:`0074_search_a_2d_matrix`"
-    "🟨", "0875 - Koko Eating Bananas"
+    "🟨", ":ref:`0875_koko_eating_bananas`"
     "🟨", "0153 - Find Minimum in Rotated Sorted Array"
     "🟨", "0033 - Search in Rotated Sorted Array"
     "🟨", "0981 - Time Based Key-Value Store"
@@ -118,6 +118,7 @@ Binary Search
 
    leetcode/0704_binary_search
    leetcode/0074_search_a_2d_matrix
+   leetcode/0875_koko_eating_bananas
 
 Sliding Window
 ==============

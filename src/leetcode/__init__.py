@@ -23,3 +23,4 @@ from .q_0347_top_k_frequent_elements import Solution0347
 from .q_0704_binary_search import Solution0704
 from .q_0739_daily_temperatures import Solution0739
 from .q_0853_car_fleet import Solution0853
+from .q_0875_koko_eating_bananas import Solution0875
