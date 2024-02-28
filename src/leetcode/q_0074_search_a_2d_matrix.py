@@ -30,11 +30,16 @@ class Solution0074:
     >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3)
     True
 
+    .. image:: https://assets.leetcode.com/uploads/2020/10/05/mat.jpg
+        :alt: table showing the 2D matrix
 
     :Example 2:
 
     >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13)
     False
+
+    .. image:: https://assets.leetcode.com/uploads/2020/10/05/mat2.jpg
+        :alt: table showing the 2D matrix
 
     """
     @staticmethod
@@ -48,7 +53,7 @@ class Solution0074:
 
         ------
 
-        :Runtime:   ``O(log(m + n))``
+        :Runtime:   ``O(log(m * n))``
         :Space:     ``O(1)``
 
         :Strategy:
