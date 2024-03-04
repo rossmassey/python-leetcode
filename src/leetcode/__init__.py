@@ -3,6 +3,7 @@ from .q_0003_longest_substring_without_repeating_characters import Solution0003
 from .q_0011_container_with_most_water import Solution0011
 from .q_0015_3sum import Solution0015
 from .q_0020_valid_parentheses import Solution0020
+from .q_0021_merge_two_sorted_lists import Solution0021
 from .q_0022_generate_parentheses import Solution0022
 from .q_0036_valid_sudoku import Solution0036
 from .q_0042_trapping_rain_water import Solution0042

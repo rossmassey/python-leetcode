@@ -147,7 +147,7 @@ Linked List
    :widths: 3, 30
 
     "🟢", ":ref:`0206_reverse_linked_list`"
-    "🟢", "0021 - Merge Two Sorted Lists"
+    "🟢", ":ref:`0021_merge_two_sorted_lists`"
     "🟢", "0141 - Linked List Cycle"
     "🟨", "0143 - Reorder List"
     "🟨", "0019 - Remove Nth Node From End of List"
@@ -163,3 +163,4 @@ Linked List
    :hidden:
 
    leetcode/0206_reverse_linked_list
+   leetcode/0021_merge_two_sorted_lists
