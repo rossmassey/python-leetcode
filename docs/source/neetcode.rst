@@ -148,7 +148,7 @@ Linked List
 
     "🟢", ":ref:`0206_reverse_linked_list`"
     "🟢", ":ref:`0021_merge_two_sorted_lists`"
-    "🟢", "0141 - Linked List Cycle"
+    "🟢", ":ref:`0141_linked_list_cycle`"
     "🟨", "0143 - Reorder List"
     "🟨", "0019 - Remove Nth Node From End of List"
     "🟨", "0138 - Copy List With Random Pointer"
@@ -164,3 +164,4 @@ Linked List
 
    leetcode/0206_reverse_linked_list
    leetcode/0021_merge_two_sorted_lists
+   leetcode/0141_linked_list_cycle
