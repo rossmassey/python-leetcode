@@ -22,9 +22,24 @@ class ListNode:
         self.next = next
 
     # HELPER METHODS (not provided by leetcode)
+    def get_node_objects(self) -> list:
+        """
+        Gets an array with access to all the nodes, treating
+        current node as the head (index ``0``)
+
+        Returns:
+            list: list of all the node objects
+        """
+        index = []
+        node = self
+        while node:
+            index.append(node)
+            node = node.next
+
+        return index
 
     @staticmethod
-    def array_to_linked_list(linked_list: list):
+    def array_to_linked_list(linked_list: list) -> ListNode:
         """
         Converts an array to a linked list.
 
@@ -47,7 +62,7 @@ class ListNode:
         return head
 
     @staticmethod
-    def linked_list_to_array(head: ListNode):
+    def linked_list_to_array(head: ListNode) -> list:
         """
         Converts a linked list to an array
 
