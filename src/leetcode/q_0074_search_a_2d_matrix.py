@@ -27,19 +27,19 @@ class Solution0074:
 
     :Example 1:
 
-    >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3)
-    True
-
     .. image:: https://assets.leetcode.com/uploads/2020/10/05/mat.jpg
         :alt: table showing the 2D matrix
 
-    :Example 2:
+    >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 3)
+    True
 
-    >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13)
-    False
+    :Example 2:
 
     .. image:: https://assets.leetcode.com/uploads/2020/10/05/mat2.jpg
         :alt: table showing the 2D matrix
+
+    >>> Solution0074.searchMatrix(matrix = [[1,3,5,7],[10,11,16,20],[23,30,34,60]], target = 13)
+    False
 
     """
     @staticmethod

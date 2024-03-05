@@ -19,12 +19,11 @@ class Solution0042:
 
     :Example 1:
 
-    >>> Solution0042.trap(height = [0,1,0,2,1,0,1,3,2,1,2,1])
-    6
-
     .. image:: https://assets.leetcode.com/uploads/2018/10/22/rainwatertrap.png
         :alt: Diagram representing elevation map for the above heights
 
+    >>> Solution0042.trap(height = [0,1,0,2,1,0,1,3,2,1,2,1])
+    6
 
     The above elevation map (black section) is represented by array
     ``[0,1,0,2,1,0,1,3,2,1,2,1]``. In this case, 6 units of rain water (blue

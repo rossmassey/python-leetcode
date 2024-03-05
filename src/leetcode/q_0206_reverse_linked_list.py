@@ -20,23 +20,23 @@ class Solution0206:
 
     :Example 1:
 
+    .. image:: https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg
+       :alt: The [5, 4, 3, 2, 1] linked list
+
     >>> example_input = ListNode.array_to_linked_list([1,2,3,4,5])
     >>> output = Solution0206.reverseList(head = example_input)
     >>> ListNode.linked_list_to_array(output)
     [5, 4, 3, 2, 1]
 
-    .. image:: https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg
-       :alt: The [5, 4, 3, 2, 1] linked list
-
     :Example 2:
+
+    .. image:: https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg
+       :alt: The [1,2] linked list
 
     >>> example_input = ListNode.array_to_linked_list([1,2])
     >>> output = Solution0206.reverseList(head = example_input)
     >>> ListNode.linked_list_to_array(output)
     [2, 1]
-
-    .. image:: https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg
-       :alt: The [1,2] linked list
 
     :Example 3:
 

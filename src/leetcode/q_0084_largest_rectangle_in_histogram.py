@@ -19,11 +19,11 @@ class Solution0084:
 
     :Example 1:
 
-    >>> Solution0084.largestRectangleArea(heights = [2,1,5,6,2,3])
-    10
-
     .. image:: https://assets.leetcode.com/uploads/2021/01/04/histogram.jpg
         :alt: Diagram representing example 1 histogram, highlighting areas
+
+    >>> Solution0084.largestRectangleArea(heights = [2,1,5,6,2,3])
+    10
 
     The above is a histogram where width of each bar is 1.
     The largest rectangle is shown in the red area, which has an area = 10 units.
@@ -31,11 +31,11 @@ class Solution0084:
 
     :Example 2:
 
-    >>> Solution0084.largestRectangleArea(heights = [2,4])
-    4
-
     .. image:: https://assets.leetcode.com/uploads/2021/01/04/histogram-1.jpg
         :alt: Diagram representing example 2 histogram, highlighting areas
+
+    >>> Solution0084.largestRectangleArea(heights = [2,4])
+    4
 
     """
     @staticmethod
@@ -100,4 +100,3 @@ class Solution0084:
             max_area = max(max_area, width * edge.height)
         
         return max_area
-
