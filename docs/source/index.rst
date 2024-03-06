@@ -12,13 +12,6 @@ Python Leetcode Solutions
 
 *WELCOME* to the documentation page for the solved problems in `python-leetcode`_ repo.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: ✏️ Problems
-
-   neetcode
-   leetcode_classes
-
 :☑️ Tests:
     .. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml/badge.svg
         :target: https://github.com/rossmassey/python-leetcode/actions/workflows/doctest.yml
@@ -27,7 +20,12 @@ Python Leetcode Solutions
     .. image:: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml/badge.svg
         :target: https://github.com/rossmassey/python-leetcode/actions/workflows/gh-pages.yml
 
+.. toctree::
+   :maxdepth: 2
+   :caption: ✏️ Problems
 
+   neetcode
+   leetcode_classes
 
 How repo is used
 ----------------
@@ -49,6 +47,7 @@ How repo is used
    doc_overview
    problem_format
    complexity
+   latex
 
 .. toctree::
    :maxdepth: 2
