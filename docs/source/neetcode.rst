@@ -128,7 +128,7 @@ Sliding Window
 
     "🟢", ":ref:`0121_best_time_to_buy_and_sell_stock`"
     "🟨", ":ref:`0003_longest_substring_without_repeating_characters`"
-    "🟨", "0424 - Longest Repeating Character Replacement"
+    "🟨", ":ref:`0424_longest_repeating_character_replacement`"
     "🟨", "0567 - Permutation In String"
     "🔺", "0076 - Minimum Window Substring"
     "🔺", "0239 - Sliding Window Maximum"
@@ -139,6 +139,7 @@ Sliding Window
 
    leetcode/0121_best_time_to_buy_and_sell_stock
    leetcode/0003_longest_substring_without_repeating_characters
+   leetcode/0424_longest_repeating_character_replacement
 
 Linked List
 ===========
