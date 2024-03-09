@@ -62,8 +62,10 @@ class Solution0424:
             of characters needing replacement. there are only 'A-Z' possible
             keys, so it is ``O(26) = O(1)`` operation
 
-            valid window will have condition ``length - most_frequent <= k``,
+            valid window will have condition ``window_size - most_frequent <= k``,
             since that means it can be changed to uniform characters (see below)
+
+            note ``window_size == end - start + 1 == sum(counts.values())``
 
             if window is not valid, move ``start`` forward to decrease the
             window size, updating the character frequencies as they are dropped
@@ -75,23 +77,29 @@ class Solution0424:
             if :math:`X` is most frequent character, want to replace everything
             that is :math:`\\neq X`
 
-            ex) :math:`AXXBXC=\\text{Not Valid}`
+            ex) :math:`XXBXCCX = XX\\hat{X}X\\hat{X}\\hat{X}X = \\text{Valid} \\ (k \\leq 3)`
 
-            need ``k`` or less of the non most frequent characters to be able to
+            need :math:`k` or less of the non most frequent characters to be able to
             change them all to create a valid string
 
-            ex) :math:`\\hat{X}XX\\hat{X}X\\hat{X}=\\text{Valid } (k \\leq 3)`
-
-            if more than ``k`` of the non-most frequent character are
+            if more than :math:`k` of the non-most frequent character are
             introduced, shift ``start`` forward until condition valid again
 
-            .. code-block:: none
+            .. code-block:: python
 
-                AXXBXCC        AXXBXCC        AXXBXCC
-                ^    ^    ->   ^     ^   ->    ^    ^
-                s    e         s     e         s    e
+               'AXXBXCCX'             'AXXBXBCX'      'AXXBXBCX'      'AXXBXBCX'      'AXXBXBCX'
+                ^         -> ... ->    ^    ^    ->    ^     ^   ->     ^    ^   ->     ^     ^
+                start,end              s    e          s     e          s    e          s     e
+                0,0                    0    5          0     6          1    6          1     7
 
-                (valid)        (invalid)      (valid)
+                counts (* = most_frequent):
+               *A: 1                   A: 1            A: 1            A: 0            A: 0
+                                      *X: 3           *X: 3           *X: 3           *X: 4
+                                       B: 2            B: 2            B: 2            B: 2
+                                                       C: 1            C: 1            C: 1
+
+                window_size - most_frequent <= k (3):
+                (valid)                (valid)         (invalid)       (valid)         (valid, end of string)
 
         """
         counts = defaultdict(int)  # default is 0
@@ -102,15 +110,15 @@ class Solution0424:
             counts[character] += 1
 
             most_frequent = max(counts.values())  # only 'A-Z' to check
-            substring_length = end - start + 1
+            window_size = end - start + 1
 
             # if condition valid with overestimated most_frequent, it is valid
             # for actual most_frequent. can avoid recomputing
-            while substring_length - most_frequent > k:
+            while window_size - most_frequent > k:
                 counts[s[start]] -= 1
                 start += 1
-                substring_length -= 1
+                window_size -= 1
 
-            longest_substring = max(longest_substring, substring_length)
+            longest_substring = max(longest_substring, window_size)
 
         return longest_substring
